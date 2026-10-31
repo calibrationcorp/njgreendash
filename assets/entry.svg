@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+<defs>
+ <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#252a27"/><stop offset="1" stop-color="#101311"/></linearGradient>
+ <linearGradient id="gold" x2="1" y2="0"><stop stop-color="#f5d66e"/><stop offset="1" stop-color="#c39422"/></linearGradient>
+ <linearGradient id="glass" x2="0" y2="1"><stop stop-color="#6c8278" stop-opacity=".65"/><stop offset="1" stop-color="#17241d"/></linearGradient>
+ <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#b3bdaf" stroke-opacity=".11" stroke-width="1"/></pattern>
+</defs>
+<title id="title">NJ Green Dash conceptual secure entry</title><desc id="desc">Illustrative entrance vestibule with glass doors and controlled entry, not a construction drawing.</desc>
+
+<rect width="1200" height="700" fill="url(#bg)"/><rect width="1200" height="700" fill="url(#grid)"/>
+<path d="M0 585H1200" stroke="#d4af37" stroke-width="3" stroke-opacity=".6"/>
+<rect x="160" y="85" width="880" height="495" fill="#222b25" stroke="#879387" stroke-width="5"/>
+<rect x="200" y="125" width="800" height="80" fill="#111914" stroke="#d4af37" stroke-width="2"/><text x="600" y="178" text-anchor="middle" fill="#efd170" font-family="Georgia,serif" font-size="34" letter-spacing="8">NJ GREEN DASH</text>
+<rect x="290" y="240" width="620" height="295" fill="#1b2c23" stroke="#9eaf9e" stroke-width="5"/>
+<rect x="315" y="260" width="280" height="255" fill="url(#glass)" stroke="#b6c4b9" stroke-width="4"/><rect x="605" y="260" width="280" height="255" fill="url(#glass)" stroke="#b6c4b9" stroke-width="4"/>
+<path d="M455 260V515M745 260V515" stroke="#9fb0a3" stroke-width="3"/><circle cx="567" cy="390" r="7" fill="#d4af37"/><circle cx="625" cy="390" r="7" fill="#d4af37"/>
+<rect x="430" y="290" width="340" height="72" rx="4" fill="#18221b" fill-opacity=".92" stroke="#d4af37" stroke-width="2"/><text x="600" y="320" text-anchor="middle" fill="#e8d18c" font-family="Arial,sans-serif" font-size="16" letter-spacing="3">CONTROLLED ACCESS</text><text x="600" y="344" text-anchor="middle" fill="#bac4b8" font-family="Arial,sans-serif" font-size="13">VESTIBULE CONCEPT</text>
+<g fill="#213a29" stroke="#758b75" stroke-width="2"><path d="M120 580q-10 -75 30 -128q35 55 20 128z"/><path d="M1030 580q-10 -75 25 -135q40 52 22 135z"/></g>
+<text x="600" y="665" text-anchor="middle" fill="#d4af37" font-family="Arial,sans-serif" font-size="18" letter-spacing="4">ILLUSTRATIVE CONCEPT VISUAL · NOT AN APPROVED RENDERING</text>
+
+</svg>
