@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+<defs>
+ <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#252a27"/><stop offset="1" stop-color="#101311"/></linearGradient>
+ <linearGradient id="gold" x2="1" y2="0"><stop stop-color="#f5d66e"/><stop offset="1" stop-color="#c39422"/></linearGradient>
+ <linearGradient id="glass" x2="0" y2="1"><stop stop-color="#6c8278" stop-opacity=".65"/><stop offset="1" stop-color="#17241d"/></linearGradient>
+ <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#b3bdaf" stroke-opacity=".11" stroke-width="1"/></pattern>
+</defs>
+<title id="title">Conceptual secure dispensary floor plan</title><desc id="desc">Schematic floor plan with reception, retail area, offices and secure storage; not code-compliant construction documentation.</desc>
+
+<rect width="1200" height="700" fill="#141a16"/><rect width="1200" height="700" fill="url(#grid)"/>
+<rect x="95" y="80" width="1010" height="520" fill="#1b241e" stroke="#d4af37" stroke-width="5"/>
+<rect x="120" y="105" width="260" height="180" fill="#24382b" stroke="#b7c4b2" stroke-width="4"/><text x="250" y="185" text-anchor="middle" fill="#e8d18c" font-family="Arial,sans-serif" font-size="24">RECEPTION</text><text x="250" y="218" text-anchor="middle" fill="#bec9bb" font-family="Arial,sans-serif" font-size="15">ID / CHECK-IN</text>
+<rect x="400" y="105" width="420" height="315" fill="#26372c" stroke="#b7c4b2" stroke-width="4"/><text x="610" y="235" text-anchor="middle" fill="#e8d18c" font-family="Arial,sans-serif" font-size="27">RETAIL FLOOR</text><text x="610" y="270" text-anchor="middle" fill="#bec9bb" font-family="Arial,sans-serif" font-size="16">BUDTENDER STATIONS</text>
+<rect x="840" y="105" width="240" height="180" fill="#473d23" stroke="#d4af37" stroke-width="4"/><text x="960" y="185" text-anchor="middle" fill="#f5dc91" font-family="Arial,sans-serif" font-size="24">SECURE</text><text x="960" y="216" text-anchor="middle" fill="#f5dc91" font-family="Arial,sans-serif" font-size="24">VAULT</text>
+<rect x="120" y="315" width="260" height="250" fill="#27312c" stroke="#9aa99a" stroke-width="4"/><text x="250" y="430" text-anchor="middle" fill="#d9e0d5" font-family="Arial,sans-serif" font-size="23">MANAGER</text><text x="250" y="460" text-anchor="middle" fill="#d9e0d5" font-family="Arial,sans-serif" font-size="23">OFFICE</text>
+<rect x="400" y="445" width="420" height="120" fill="#223229" stroke="#9aa99a" stroke-width="4"/><text x="610" y="510" text-anchor="middle" fill="#d9e0d5" font-family="Arial,sans-serif" font-size="22">SECURE LOADING / RECEIVING</text>
+<rect x="840" y="315" width="240" height="250" fill="#24312a" stroke="#9aa99a" stroke-width="4"/><text x="960" y="420" text-anchor="middle" fill="#d9e0d5" font-family="Arial,sans-serif" font-size="21">STAFF /</text><text x="960" y="448" text-anchor="middle" fill="#d9e0d5" font-family="Arial,sans-serif" font-size="21">SUPPORT</text>
+<path d="M380 195H400M820 195H840M250 285V315M960 285V315M610 420V445" stroke="#d4af37" stroke-width="7" stroke-dasharray="12 8"/>
+<text x="600" y="635" text-anchor="middle" fill="#d4af37" font-family="Arial,sans-serif" font-size="18" letter-spacing="4">SCHEMATIC CONCEPT ONLY · VERIFY WITH LICENSED DESIGN PROFESSIONALS</text>
+
+</svg>
