@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+<defs>
+ <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#252a27"/><stop offset="1" stop-color="#101311"/></linearGradient>
+ <linearGradient id="gold" x2="1" y2="0"><stop stop-color="#f5d66e"/><stop offset="1" stop-color="#c39422"/></linearGradient>
+ <linearGradient id="glass" x2="0" y2="1"><stop stop-color="#6c8278" stop-opacity=".65"/><stop offset="1" stop-color="#17241d"/></linearGradient>
+ <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#b3bdaf" stroke-opacity=".11" stroke-width="1"/></pattern>
+</defs>
+<title id="title">Conceptual dispensary site and parking plan</title><desc id="desc">Illustrative birdseye site layout with access drive, parking, building and landscape zones; not a survey.</desc>
+
+<rect width="1200" height="700" fill="#141b16"/><rect width="1200" height="700" fill="url(#grid)"/>
+<rect x="80" y="70" width="1040" height="550" rx="10" fill="#1d2b22" stroke="#d4af37" stroke-width="4"/>
+<rect x="370" y="155" width="470" height="210" fill="#303b33" stroke="#bec7b8" stroke-width="5"/><rect x="420" y="195" width="370" height="75" fill="#152019" stroke="#d4af37" stroke-width="3"/><text x="605" y="246" text-anchor="middle" fill="#efd170" font-family="Georgia,serif" font-size="31" letter-spacing="5">PIPE NJ</text><text x="605" y="315" text-anchor="middle" fill="#bfcabb" font-family="Arial,sans-serif" font-size="16">ANCHOR RETAIL CONCEPT</text>
+<path d="M100 420H1100" stroke="#7b8a7b" stroke-width="75"/><path d="M100 420H1100" stroke="#d1d7ce" stroke-width="3" stroke-dasharray="28 24"/>
+<g fill="#323b34" stroke="#b6c1b2" stroke-width="3"><rect x="170" y="475" width="110" height="65" rx="5"/><rect x="300" y="475" width="110" height="65" rx="5"/><rect x="430" y="475" width="110" height="65" rx="5"/><rect x="560" y="475" width="110" height="65" rx="5"/><rect x="690" y="475" width="110" height="65" rx="5"/><rect x="820" y="475" width="110" height="65" rx="5"/></g>
+<g fill="#24452d" stroke="#8ea185" stroke-width="2"><circle cx="145" cy="170" r="34"/><circle cx="245" cy="170" r="34"/><circle cx="965" cy="175" r="34"/><circle cx="1055" cy="175" r="34"/><circle cx="140" cy="565" r="28"/><circle cx="1040" cy="565" r="28"/></g>
+<g fill="#f1d477" font-family="Arial,sans-serif" font-size="18"><text x="605" y="115" text-anchor="middle">BUILDING / SIGNAGE ZONE</text><text x="605" y="590" text-anchor="middle">PARKING / LANDSCAPE STUDY</text></g>
+<text x="600" y="665" text-anchor="middle" fill="#d4af37" font-family="Arial,sans-serif" font-size="18" letter-spacing="4">ILLUSTRATIVE SITE CONCEPT · NOT A PROPERTY SURVEY</text>
+
+</svg>
