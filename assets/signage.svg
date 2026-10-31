@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+<defs>
+ <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#252a27"/><stop offset="1" stop-color="#101311"/></linearGradient>
+ <linearGradient id="gold" x2="1" y2="0"><stop stop-color="#f5d66e"/><stop offset="1" stop-color="#c39422"/></linearGradient>
+ <linearGradient id="glass" x2="0" y2="1"><stop stop-color="#6c8278" stop-opacity=".65"/><stop offset="1" stop-color="#17241d"/></linearGradient>
+ <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#b3bdaf" stroke-opacity=".11" stroke-width="1"/></pattern>
+</defs>
+<title id="title">NJ Green Dash conceptual signage detail</title><desc id="desc">Illustrative storefront sign and facade detail drawing for visual reference only.</desc>
+
+<rect width="1200" height="700" fill="#141b16"/><rect width="1200" height="700" fill="url(#grid)"/>
+<g stroke="#d4af37" stroke-width="2" fill="none"><rect x="85" y="95" width="1030" height="465" rx="8"/><path d="M135 155H1065M135 500H1065M180 190V465M1020 190V465" stroke-opacity=".4"/><rect x="280" y="235" width="640" height="180" rx="5" stroke-width="4"/></g>
+<rect x="295" y="250" width="610" height="150" rx="4" fill="#202a23" stroke="#b7a15b" stroke-width="5"/>
+<path d="M415 280l35 -18 33 18v77h-68z" fill="none" stroke="url(#gold)" stroke-width="6"/><text x="700" y="323" text-anchor="middle" fill="#f2d578" font-family="Georgia,serif" font-size="47" letter-spacing="10">PIPE NJ</text><text x="700" y="363" text-anchor="middle" fill="#bdc7bb" font-family="Arial,sans-serif" font-size="15" letter-spacing="5">ILLUMINATED SIGN CONCEPT</text>
+<g stroke="#d4af37" stroke-width="2" fill="none"><path d="M295 218V190H905V218M270 250H240V400H270M930 250H960V400H930"/><path d="M295 430V458H905V430"/></g>
+<g fill="#d8c58d" font-family="Arial,sans-serif" font-size="18"><text x="600" y="143" text-anchor="middle">SIGN FACE / ALUMINUM FRAME STUDY</text><text x="600" y="535" text-anchor="middle">CONCEPT ELEVATION · FIELD VERIFY ALL DIMENSIONS</text></g>
+<g fill="#8e9d8f" font-family="monospace" font-size="15"><text x="120" y="610">DETAIL: SIGNAGE / FACADE INTERFACE</text><text x="1080" y="610" text-anchor="end">NJGD · CONCEPT</text></g>
+<text x="600" y="665" text-anchor="middle" fill="#d4af37" font-family="Arial,sans-serif" font-size="18" letter-spacing="4">ILLUSTRATIVE CONCEPT VISUAL · NOT A CONSTRUCTION DRAWING</text>
+
+</svg>
