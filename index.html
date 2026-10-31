@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="NJ Green Dash provides New Jersey ATC and medical dispensary facility design, planning, licensing advisory, and consulting services from Brick, NJ.">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="build-version" content="2026-10-31-static-publish">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <meta name="robots" content="index,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NJ Green Dash | ATC & Medical Dispensary Consulting Studio | Brick, NJ</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        charcoal: '#1a1a1a',
+                        darkpanel: '#222222',
+                        cardborder: '#333333',
+                        warmgrey: '#71717a',
+                        forestgreen: '#14361e',
+                        forestlight: '#1e3f20',
+                        greenaccent: '#22c55e',
+                        gold: '#d4af37',
+                        goldlight: '#fbbf24',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a;
+            color: #f4f4f5;
+        }
+        .gold-glow {
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+        .green-glow {
+            box-shadow: 0 0 25px rgba(34, 197, 94, 0.15);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #14361e;
+        }
+    </style>
+</head>
+<body class="bg-charcoal text-gray-100 min-h-screen flex flex-col selection:bg-gold selection:text-black">
+
+    <!-- Top Announcement & Contact Bar -->
+    <div class="bg-darkpanel border-b border-cardborder text-xs py-2 px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4 text-warmgrey">
+                <span><i class="fas fa-map-marker-alt text-gold mr-1.5"></i> 471 Mantoloking Road, Brick, NJ 08723</span>
+                <span class="hidden md:inline text-cardborder">|</span>
+                <span class="hidden md:inline"><i class="fas fa-shield-alt text-greenaccent mr-1.5"></i> State-Approved ATC & Corporate Advisory</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-xs text-gray-400 hidden lg:inline"><i class="fas fa-plug text-gold mr-1"></i> IONOS Hosting Package</span>
+                <a href="tel:7325567388" class="text-gold font-semibold hover:text-goldlight transition-colors flex items-center gap-1.5">
+                    <i class="fas fa-phone-alt"></i> 732-556-7388
+                </a>
+                <a href="#consultation" class="bg-forestgreen hover:bg-forestlight text-white px-3 py-1 rounded font-medium transition-colors border border-green-800/40">
+                    Request Consultation
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-40 bg-charcoal/95 backdrop-blur border-b border-cardborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-lg bg-darkpanel border border-gold/40 flex items-center justify-center shadow-lg group-hover:border-gold transition-colors">
+                    <span class="font-serif font-bold text-gold text-lg">NJ</span>
+                </div>
+                <div>
+                    <h1 class="font-serif font-bold text-xl sm:text-2xl tracking-wide text-white group-hover:text-gold transition-colors">
+                        NJ GREEN DASH
+                    </h1>
+                    <p class="text-[10px] uppercase tracking-widest text-warmgrey">ATC & Dispensary Consulting Studio</p>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#hero" class="hover:text-gold transition-colors">Overview</a>
+                <a href="#pipe-nj" class="hover:text-gold transition-colors">Pipe NJ Elevation</a>
+                <a href="#services" class="hover:text-gold transition-colors">Services</a>
+                <a href="#portfolio" class="hover:text-gold transition-colors">Facility Plans</a>
+                <a href="#about" class="hover:text-gold transition-colors">Studio</a>
+                <a href="#ionos-connector" class="hover:text-gold transition-colors">IONOS Setup</a>
+                <a href="#consultation" class="hover:text-gold transition-colors">Contact</a>
+            </nav>
+
+            <!-- Header Phone & CTA -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="tel:7325567388" class="flex items-center gap-2.5 bg-darkpanel hover:bg-cardborder border border-cardborder px-4 py-2 rounded-lg transition-all group">
+                    <div class="w-8 h-8 rounded-full bg-gold/10 text-gold flex items-center justify-center group-hover:bg-gold group-hover:text-black transition-all">
+                        <i class="fas fa-phone text-xs"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="text-[10px] text-warmgrey uppercase tracking-wider">Direct Studio Line</div>
+                        <div class="text-sm font-bold text-white">732-556-7388</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation menu" class="lg:hidden text-gray-300 hover:text-white p-2 focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-darkpanel border-b border-cardborder px-6 py-4 space-y-3">
+            <a href="#hero" class="block text-sm text-gray-200 hover:text-gold py-1">Overview</a>
+            <a href="#pipe-nj" class="block text-sm text-gray-200 hover:text-gold py-1">Pipe NJ Elevation</a>
+            <a href="#services" class="block text-sm text-gray-200 hover:text-gold py-1">Services</a>
+            <a href="#portfolio" class="block text-sm text-gray-200 hover:text-gold py-1">Facility Plans</a>
+            <a href="#about" class="block text-sm text-gray-200 hover:text-gold py-1">Studio</a>
+            <a href="#ionos-connector" class="block text-sm text-gray-200 hover:text-gold py-1">IONOS Connector Setup</a>
+            <a href="#consultation" class="block text-sm text-gray-200 hover:text-gold py-1">Contact & Consultation</a>
+            <div class="pt-2 border-t border-cardborder flex items-center justify-between">
+                <span class="text-xs text-warmgrey">Call 732-556-7388</span>
+                <a href="tel:7325567388" class="text-xs bg-gold text-black font-semibold px-3 py-1.5 rounded">Call Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-16 pb-24 overflow-hidden border-b border-cardborder">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-forestgreen/25 via-charcoal to-charcoal -z-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center gap-2 bg-darkpanel border border-cardborder px-3.5 py-1.5 rounded-full text-xs font-medium text-gold">
+                    <i class="fas fa-certificate text-gold"></i> Corporate, Institutional & State-Approved ATC Facility Design
+                </div>
+                
+                <h1 class="font-serif text-4xl sm:text-6xl font-bold tracking-tight leading-tight">
+                    Facility Design & Regulatory Excellence for <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-200 to-greenaccent">Medical Dispensary ATCs</span>
+                </h1>
+                
+                <p class="text-base sm:text-lg text-warmgrey leading-relaxed">
+                    NJ Green Dash is a premier consulting and facility design studio based in Brick, New Jersey. We partner with corporate enterprises, institutional stakeholders, and state-approved Alternative Treatment Center (ATC) applicants to deliver world-class compliant facilities, master planning, and turnkey retail buildouts.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="#consultation" class="bg-forestgreen hover:bg-forestlight text-white font-semibold px-8 py-3.5 rounded-lg text-center transition-all shadow-lg flex items-center justify-center gap-2 border border-green-700/50">
+                        <span>Schedule Facility Consultation</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="#pipe-nj" class="bg-darkpanel hover:bg-cardborder border border-cardborder text-gray-200 font-semibold px-8 py-3.5 rounded-lg text-center transition-all flex items-center justify-center gap-2 hover:border-gold/50">
+                        <i class="fas fa-building text-gold"></i>
+                        <span>Explore Pipe NJ Facade</span>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-3 gap-6 pt-8 border-t border-cardborder">
+                    <div>
+                        <div class="font-serif text-2xl sm:text-3xl font-bold text-gold">NJ CRC</div>
+                        <div class="text-xs text-warmgrey mt-1">Regulatory Planning Focus</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-2xl sm:text-3xl font-bold text-white">471</div>
+                        <div class="text-xs text-warmgrey mt-1">Mantoloking Rd Studio</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-2xl sm:text-3xl font-bold text-greenaccent">NCARB</div>
+                        <div class="text-xs text-warmgrey mt-1">& Calibration Co. Backing</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Feature Card / Pipe NJ Preview -->
+            <div class="lg:col-span-5">
+                <div class="bg-darkpanel border border-cardborder rounded-2xl p-6 shadow-2xl relative group">
+                    <div class="absolute -top-3 -right-3 bg-gold text-black font-bold text-xs px-3 py-1 rounded-full shadow">
+                        FEATURED FACADE DESIGN
+                    </div>
+                    <div class="rounded-xl overflow-hidden mb-4 border border-cardborder relative">
+                        <img src="assets/facade.svg" alt="Pipe NJ Dispensary Facade & Parking Design" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent flex items-end p-4">
+                            <span class="text-xs font-semibold bg-charcoal/90 text-gold px-2.5 py-1 rounded border border-gold/30">
+                                <i class="fas fa-map-pin mr-1"></i> New Jersey State Anchor Dispensary
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-serif font-bold text-lg text-white">The Pipe NJ Elevation</h3>
+                            <span class="text-xs text-greenaccent bg-forestgreen/40 border border-green-700/50 px-2 py-0.5 rounded">Featured Concept</span>
+                        </div>
+                        <p class="text-xs text-warmgrey leading-relaxed">
+                            Featuring our signature glowing yellow NJ-outline icon, dark metal composite wall panels, and high-security facility layout designed for optimal patient flow and strict municipal zoning adherence.
+                        </p>
+                        <div class="pt-2 flex justify-between items-center text-xs text-gray-400 border-t border-cardborder">
+                            <span>Brick, NJ Studio</span>
+                            <a href="#pipe-nj" class="text-gold hover:underline font-medium">View Drawings & Specs <i class="fas fa-chevron-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Featured Project: Pipe NJ Elevation & Signage Showcase -->
+    <section id="pipe-nj" class="py-20 bg-darkpanel/40 border-b border-cardborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs uppercase tracking-widest text-gold bg-darkpanel border border-cardborder px-3 py-1 rounded-full">Flagship Facility Concept</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold">The Pipe NJ Facility & Signage Design</h2>
+                <p class="text-warmgrey text-sm sm:text-base">
+                    A masterclass in modern medical dispensary building design. Engineered with charcoal metal composite panels, warm wood grain accents, and our iconic illuminated yellow New Jersey silhouette sign.
+                </p>
+            </div>
+
+            <!-- Image Grid Showcasing Provided Samples -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1: 3D Exterior Facade -->
+                <div class="bg-darkpanel border border-cardborder rounded-xl overflow-hidden shadow-xl flex flex-col group hover:border-gold/40 transition-colors">
+                    <div class="relative h-64 overflow-hidden bg-black">
+                        <img src="assets/facade.svg" alt="Pipe NJ Exterior Facade" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-charcoal/90 text-gold text-xs font-semibold px-2.5 py-1 rounded border border-gold/30">
+                            3D Perspective
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-serif font-bold text-lg text-white mb-1">Storefront Elevation & Plaza</h3>
+                            <p class="text-xs text-warmgrey">
+                                Multi-tenant strip integration featuring The Apothecary dispensary anchor, secure parking bays, and bespoke exterior landscaping.
+                            </p>
+                        </div>
+                        <button onclick="openImageModal('assets/facade.svg', 'The Pipe NJ Exterior Facade & Parking Master Plan')" class="w-full bg-charcoal hover:bg-cardborder border border-cardborder text-xs text-gold py-2.5 rounded font-medium transition-colors flex items-center justify-center gap-2">
+                            <i class="fas fa-expand"></i> View High-Res Rendering
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2: Storefront & Signage Details -->
+                <div class="bg-darkpanel border border-cardborder rounded-xl overflow-hidden shadow-xl flex flex-col group hover:border-gold/40 transition-colors">
+                    <div class="relative h-64 overflow-hidden bg-black">
+                        <img src="assets/signage.svg" alt="Storefront Elevation & Signage Details" class="w-full h-full object-contain bg-neutral-900 p-2 group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-charcoal/90 text-gold text-xs font-semibold px-2.5 py-1 rounded border border-gold/30">
+                            Facility Blueprint
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-serif font-bold text-lg text-white mb-1">Pipe NJ Signage & Facade Detail</h3>
+                            <p class="text-xs text-warmgrey">
+                                Detailed 1/4" LED illuminated acrylic sign face with aluminum frame and precision metal facade framing specifications.
+                            </p>
+                        </div>
+                        <button onclick="openImageModal('assets/signage.svg', 'Storefront Elevation & Signage Construction Details')" class="w-full bg-charcoal hover:bg-cardborder border border-cardborder text-xs text-gold py-2.5 rounded font-medium transition-colors flex items-center justify-center gap-2">
+                            <i class="fas fa-expand"></i> View Blueprint Spec
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3: Detailed Storefront Close-up -->
+                <div class="bg-darkpanel border border-cardborder rounded-xl overflow-hidden shadow-xl flex flex-col group hover:border-gold/40 transition-colors">
+                    <div class="relative h-64 overflow-hidden bg-black">
+                        <img src="assets/entry.svg" alt="Storefront Entrance Signage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-charcoal/90 text-gold text-xs font-semibold px-2.5 py-1 rounded border border-gold/30">
+                            Entrance View
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-serif font-bold text-lg text-white mb-1">Medical Dispensary Entryway</h3>
+                            <p class="text-xs text-warmgrey">
+                                Secure double-door glass vestibule with frosted branding, operating hours display, and strict security integration.
+                            </p>
+                        </div>
+                        <button onclick="openImageModal('assets/entry.svg', 'Medical Dispensary Storefront Entrance & Branding')" class="w-full bg-charcoal hover:bg-cardborder border border-cardborder text-xs text-gold py-2.5 rounded font-medium transition-colors flex items-center justify-center gap-2">
+                            <i class="fas fa-expand"></i> View Close-up
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Floor Plan Callout -->
+            <div class="mt-12 bg-charcoal border border-cardborder rounded-2xl p-6 sm:p-8 flex flex-col lg:flex-row items-center gap-8">
+                <div class="w-full lg:w-1/2 rounded-xl overflow-hidden border border-cardborder bg-black h-64 sm:h-80 relative cursor-pointer group" onclick="openImageModal('assets/floorplan.svg', 'Dispensary Floor Plan - Overall & Security Layout')">
+                    <img src="assets/floorplan.svg" alt="Dispensary Floor Plan" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="bg-gold text-black text-xs font-bold px-4 py-2 rounded shadow"><i class="fas fa-search-plus mr-1.5"></i> Click to Inspect Floor Plan</span>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 space-y-4">
+                    <div class="inline-flex items-center gap-2 text-xs font-semibold text-greenaccent bg-forestgreen/40 border border-green-700/50 px-3 py-1 rounded">
+                        <i class="fas fa-shield-halved"></i> Compliant Spatial Engineering
+                    </div>
+                    <h3 class="font-serif text-2xl sm:text-3xl font-bold">Secure Floor Plan & Zoning Layout</h3>
+                    <p class="text-warmgrey text-sm leading-relaxed">
+                        Our facility layouts are meticulously designed to satisfy State of New Jersey Cannabis Regulatory Commission (CRC) standards. Each facility features partitioned security vestibules, high-grade vault security, controlled budtender stations, secure manager offices, and separate secure loading access.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="flex items-center gap-2 text-xs text-gray-300">
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>Secure Vault & Armored Storage</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-gray-300">
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>Patient Reception & ID Check</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-gray-300">
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>Separate ADA Restrooms</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-gray-300">
+                            <i class="fas fa-check-circle text-gold"></i>
+                            <span>POS Terminal Optimization</span>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <button onclick="openImageModal('assets/floorplan.svg', 'Dispensary Floor Plan - Overall & Security Layout')" class="bg-gold hover:bg-goldlight text-black font-bold px-6 py-2.5 rounded text-xs transition-colors">
+                            Inspect Full Facility Plan
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 border-b border-cardborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs uppercase tracking-widest text-gold bg-darkpanel border border-cardborder px-3 py-1 rounded-full">Comprehensive Advisory</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold">Institutional & Corporate ATC Services</h2>
+                <p class="text-warmgrey text-sm sm:text-base">
+                    From municipal zoning board presentations to complete building design blueprints and state licensing documentation, NJ Green Dash guides your project from concept to ribbon-cutting.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-darkpanel border border-cardborder rounded-xl p-6 hover:border-gold/50 transition-all group flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-lg bg-gold/10 text-gold flex items-center justify-center text-xl group-hover:bg-gold group-hover:text-black transition-colors">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-white">Corporate ATC Licensing</h3>
+                        <p class="text-xs text-warmgrey leading-relaxed">
+                            Navigation of New Jersey CRC regulations, municipal resolutions, local land use board approvals, and state operating permit applications.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-cardborder mt-6">
+                        <a href="#consultation" class="text-xs text-gold font-medium hover:underline flex items-center gap-1.5">
+                            Inquire about licensing <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-darkpanel border border-cardborder rounded-xl p-6 hover:border-gold/50 transition-all group flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-lg bg-gold/10 text-gold flex items-center justify-center text-xl group-hover:bg-gold group-hover:text-black transition-colors">
+                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-white">Facility & Civil Site Design</h3>
+                        <p class="text-xs text-warmgrey leading-relaxed">
+                            Bespoke retail elevations, storefront branding, metal composite paneling, spatial flow optimization, and ADA-compliant site planning.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-cardborder mt-6">
+                        <a href="#consultation" class="text-xs text-gold font-medium hover:underline flex items-center gap-1.5">
+                            View facility scope <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-darkpanel border border-cardborder rounded-xl p-6 hover:border-gold/50 transition-all group flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-lg bg-gold/10 text-gold flex items-center justify-center text-xl group-hover:bg-gold group-hover:text-black transition-colors">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-white">Security Vestibule & Vault Engineering</h3>
+                        <p class="text-xs text-warmgrey leading-relaxed">
+                            State-mandated CCTV layout, secure armed product vaults, restricted access control vestibules, and cash-handling security structure.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-cardborder mt-6">
+                        <a href="#consultation" class="text-xs text-gold font-medium hover:underline flex items-center gap-1.5">
+                            Secure your facility <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-darkpanel border border-cardborder rounded-xl p-6 hover:border-gold/50 transition-all group flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-lg bg-gold/10 text-gold flex items-center justify-center text-xl group-hover:bg-gold group-hover:text-black transition-colors">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl text-white">As-Built Documentation</h3>
+                        <p class="text-xs text-warmgrey leading-relaxed">
+                            Comprehensive CAD as-built records, MEP mapping, structural engineering sign-offs, and Calibration Co. facility certifications.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-cardborder mt-6">
+                        <a href="#consultation" class="text-xs text-gold font-medium hover:underline flex items-center gap-1.5">
+                            Get documentation <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Facility Drawings Section -->
+    <section id="portfolio" class="py-20 bg-darkpanel/40 border-b border-cardborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs uppercase tracking-widest text-gold bg-darkpanel border border-cardborder px-3 py-1 rounded-full">Engineering Portfolio</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold">Facility & Site Plan Gallery</h2>
+                <p class="text-warmgrey text-sm sm:text-base">
+                    Click any drawing below to inspect detailed schematics, site master plans, and signage specifications created by our Brick, NJ studio.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div onclick="openImageModal('assets/siteplan.svg', 'Strip Mall Anchor Dispensary Site Plan')" class="bg-darkpanel border border-cardborder rounded-xl p-4 cursor-pointer hover:border-gold transition-all group">
+                    <div class="h-48 overflow-hidden rounded-lg bg-black mb-4 relative">
+                        <img src="assets/siteplan.svg" alt="Site Plan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="bg-gold text-black text-xs font-bold px-3 py-1.5 rounded"><i class="fas fa-search-plus mr-1"></i> Zoom Drawing</span>
+                        </div>
+                    </div>
+                    <h4 class="font-serif font-bold text-white text-base">Site Plan & Parking Layout</h4>
+                    <p class="text-xs text-warmgrey mt-1">Full property survey, bollard placement, and landscaping schedule.</p>
+                </div>
+
+                <div onclick="openImageModal('assets/signage.svg', 'Storefront Elevation & Signage Details')" class="bg-darkpanel border border-cardborder rounded-xl p-4 cursor-pointer hover:border-gold transition-all group">
+                    <div class="h-48 overflow-hidden rounded-lg bg-black mb-4 relative">
+                        <img src="assets/signage.svg" alt="Elevation" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="bg-gold text-black text-xs font-bold px-3 py-1.5 rounded"><i class="fas fa-search-plus mr-1"></i> Zoom Drawing</span>
+                        </div>
+                    </div>
+                    <h4 class="font-serif font-bold text-white text-base">Storefront Elevation & Signage</h4>
+                    <p class="text-xs text-warmgrey mt-1">Pipe NJ backlit LED acrylic sign and metal facade specs.</p>
+                </div>
+
+                <div onclick="openImageModal('assets/floorplan.svg', 'Floor Plan - Overall & Dispensary Layout')" class="bg-darkpanel border border-cardborder rounded-xl p-4 cursor-pointer hover:border-gold transition-all group">
+                    <div class="h-48 overflow-hidden rounded-lg bg-black mb-4 relative">
+                        <img src="assets/floorplan.svg" alt="Floor Plan" class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="bg-gold text-black text-xs font-bold px-3 py-1.5 rounded"><i class="fas fa-search-plus mr-1"></i> Zoom Drawing</span>
+                        </div>
+                    </div>
+                    <h4 class="font-serif font-bold text-white text-base">Overall Dispensary Floor Plan</h4>
+                    <p class="text-xs text-warmgrey mt-1">Security vestibules, vault, budtender stations, and retail sales floor.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Studio Section -->
+    <section id="about" class="py-20 border-b border-cardborder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-6 space-y-6">
+                <span class="text-xs uppercase tracking-widest text-gold bg-darkpanel border border-cardborder px-3 py-1 rounded-full">Studio Headquarters</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold">Rooted in Brick, NJ. Serving State-Wide ATC Operators.</h2>
+                <p class="text-warmgrey text-base leading-relaxed">
+                    NJ Green Dash operates out of our premier consulting studio located at <strong class="text-white">471 Mantoloking Road, Brick, NJ 08723</strong>. Our multidisciplinary team comprises licensed structural designers, municipal land-use specialists, security engineers, and regulatory compliance experts.
+                </p>
+                <p class="text-warmgrey text-base leading-relaxed">
+                    Whether you are a corporate group securing municipal support, an institutional investor building a multi-acre cultivation and retail footprint, or a state-approved ATC looking to optimize your storefront elevation like our featured <em class="text-gold">Pipe NJ</em> design, our studio provides uncompromising professionalism.
+                </p>
+
+                <div class="grid grid-cols-2 gap-6 pt-4">
+                    <div class="bg-darkpanel border border-cardborder p-4 rounded-xl">
+                        <div class="text-gold font-bold text-lg mb-1"><i class="fas fa-map-marker-alt mr-2"></i> Brick Studio</div>
+                        <p class="text-xs text-warmgrey">471 Mantoloking Road<br>Brick, NJ 08723</p>
+                    </div>
+                    <div class="bg-darkpanel border border-cardborder p-4 rounded-xl">
+                        <div class="text-gold font-bold text-lg mb-1"><i class="fas fa-phone-alt mr-2"></i> Direct Line</div>
+                        <p class="text-xs text-warmgrey"><a href="tel:7325567388" class="text-white hover:text-gold font-semibold">732-556-7388</a><br>Monday - Friday, 9AM - 6PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6">
+                <div class="bg-darkpanel border border-cardborder rounded-2xl p-8 shadow-2xl relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-forestgreen rounded-xl border border-green-700 flex items-center justify-center text-gold text-xl shadow-lg">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-2xl text-white mb-6 pt-2">The NJ Green Dash Standard</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-gold/10 text-gold flex items-center justify-center shrink-0 mt-1 font-bold text-sm">1</div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">NCARB & Calibration Co. Certified</h4>
+                                <p class="text-xs text-warmgrey mt-1">Professional facility design credentials and state-approved engineering documentation for commercial and retail facilities.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-gold/10 text-gold flex items-center justify-center shrink-0 mt-1 font-bold text-sm">2</div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Strict Regulatory Compliance</h4>
+                                <p class="text-xs text-warmgrey mt-1">Every blueprint, security vestibule, and vault layout is engineered in strict accordance with New Jersey Cannabis Regulatory Commission mandates.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-gold/10 text-gold flex items-center justify-center shrink-0 mt-1 font-bold text-sm">3</div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Direct Principal Access</h4>
+                                <p class="text-xs text-warmgrey mt-1">Call our studio directly at <a href="tel:7325567388" class="text-gold font-semibold hover:underline">732-556-7388</a> to speak immediately with a senior facility consultant.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IONOS Web Connector & Submission Configuration Section -->
+    <section id="ionos-connector" class="py-20 bg-darkpanel/40 border-b border-cardborder">
+        <div class="max-w-5xl mx-auto px-4 sm:px-8">
+            <div class="bg-charcoal border border-cardborder rounded-2xl p-8 shadow-2xl space-y-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-cardborder pb-6">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-xs text-gold bg-darkpanel border border-cardborder px-3 py-1 rounded mb-2">
+                            <i class="fas fa-plug"></i> IONOS Hosting & Connector Integration
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-white">Submission Handling & Web Connector Setup</h3>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-xs text-warmgrey">Status: <span class="text-gold font-semibold">Ready for account setup</span></span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-xs text-warmgrey leading-relaxed">
+                    <div class="space-y-4">
+                        <p>
+                            This site is packaged for <strong class="text-white">IONOS Linux Web Hosting</strong>. The consultation form posts to the included <code class="text-gold">submit.php</code> handler. New inquiries are routed to the connected Gmail inbox through IONOS mail delivery, and visitors receive an acknowledgement email.
+                        </p>
+                        <p>
+                            The receiving inbox is configured as the connected Gmail account. The sender is <strong class="text-white">contact@onlydecks.info</strong>; create/activate this mailbox in IONOS before testing delivery. Replies to visitor inquiries go to the visitor email address, and the acknowledgement reply-to is the Gmail inbox.
+                        </p>
+                    </div>
+                    <div class="bg-darkpanel border border-cardborder p-5 rounded-xl space-y-3">
+                        <h4 class="font-bold text-white text-sm flex items-center gap-2">
+                            <i class="fas fa-terminal text-gold"></i> IONOS Endpoint Configuration
+                        </h4>
+                        <div class="bg-black/60 p-3 rounded font-mono text-[11px] text-green-400 overflow-x-auto">
+                            /config.php<br>
+                            SITE_RECIPIENT_EMAIL = connected Gmail inbox<br>
+                            SITE_FROM_EMAIL = contact@onlydecks.info<br>
+                            /submit.php = notify + visitor acknowledgement
+                        </div>
+                        <p class="text-[11px]">
+                            Create the contact@onlydecks.info mailbox in IONOS and test the form after hosting is active. For immediate inquiries, call <strong class="text-white">732-556-7388</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Section & Interactive Form -->
+    <section id="consultation" class="py-20 bg-darkpanel/50 border-b border-cardborder relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-8">
+            <div class="text-center mb-12 space-y-4">
+                <span class="text-xs uppercase tracking-widest text-gold bg-darkpanel border border-cardborder px-3 py-1 rounded-full">Secure Consultation Panel</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold">Request Facility & Building Design Consultation</h2>
+                <p class="text-warmgrey text-sm sm:text-base max-w-2xl mx-auto">
+                    Complete the secure project intake form below. Our studio reviews submissions daily. For immediate inquiries, call our direct line at <a href="tel:7325567388" class="text-gold font-semibold underline">732-556-7388</a>.
+                </p>
+            </div>
+
+            <div class="bg-charcoal border border-cardborder rounded-2xl p-6 sm:p-10 shadow-2xl">
+                <form id="consultationForm" action="https://formsubmit.co/ziggydogman@gmail.com" method="POST" class="space-y-6">
+                    <input type="hidden" name="_subject" value="New NJ Green Dash website consultation request">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_autoresponse" value="Thank you for contacting NJ Green Dash. We received your inquiry and will follow up as soon as possible. For immediate assistance, please call 732-556-7388.">
+                    <div class="absolute -left-[10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true"><label for="website">Leave this field empty</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Name -->
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Full Name *</label>
+                            <input type="text" id="consultName" name="name" maxlength="120" autocomplete="name" required placeholder="e.g. Marcus Vance" class="w-full bg-darkpanel border border-cardborder rounded-lg px-4 py-3 text-sm text-white focus:border-gold focus:outline-none transition-colors">
+                        </div>
+                        <!-- Organization -->
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Organization / Entity *</label>
+                            <input type="text" id="consultOrg" name="organization" maxlength="160" autocomplete="organization" required placeholder="e.g. Pipe NJ Holdings LLC" class="w-full bg-darkpanel border border-cardborder rounded-lg px-4 py-3 text-sm text-white focus:border-gold focus:outline-none transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Email -->
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Email Address *</label>
+                            <input type="email" id="consultEmail" name="email" maxlength="254" autocomplete="email" required placeholder="marcus@pipenj.com" class="w-full bg-darkpanel border border-cardborder rounded-lg px-4 py-3 text-sm text-white focus:border-gold focus:outline-none transition-colors">
+                        </div>
+                        <!-- Phone -->
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Phone Number *</label>
+                            <input type="tel" id="consultPhone" name="phone" maxlength="40" autocomplete="tel" required placeholder="732-556-7388" class="w-full bg-darkpanel border border-cardborder rounded-lg px-4 py-3 text-sm text-white focus:border-gold focus:outline-none transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Engagement Type -->
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Engagement Type *</label>
+                            <select id="consultType" name="engagement_type" required class="w-full bg-darkpanel border border-cardborder rounded-lg px-4 py-3 text-sm text-white focus:border-gold focus:outline-none transition-colors">
+                                <option value="" disabled selected>Select engagement scope...</option>
+                                <option value="Corporate Dispensary Advisory">Corporate Dispensary Advisory</option>
+                                <option value="Institutional Cultivation & Facility">Institutional Cultivation & Facility</option>
+                                <option value="State-Approved ATC Buildout">State-Approved ATC Buildout</option>
+                                <option value="Retail Facade & Signage">Retail Facade & Signage Design</option>
+                                <option value="Zoning & Municipal Support">Zoning & Municipal Board Support</option>
+                            </select>
+                        </div>
+                        <!-- Municipality -->
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Target Municipality in NJ *</label>
+                            <input type="text" id="consultMuni" name="municipality" maxlength="160" required placeholder="e.g. Brick Township, Ocean County" class="w-full bg-darkpanel border border-cardborder rounded-lg px-4 py-3 text-sm text-white focus:border-gold focus:outline-none transition-colors">
+                        </div>
+                    </div>
+
+                    <!-- Note -->
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-2">Facility Details & Project Note *</label>
+                        <textarea id="consultNote" name="project_details" maxlength="5000" required rows="4" placeholder="Describe your facility square footage, zoning status, timeline, and structural requirements..." class="w-full bg-darkpanel border border-cardborder rounded-lg px-4 py-3 text-sm text-white focus:border-gold focus:outline-none transition-colors"></textarea>
+                    </div>
+
+                    <!-- Notice Note -->
+                    <div class="bg-darkpanel border border-cardborder p-4 rounded-lg text-xs text-warmgrey flex items-start gap-3">
+                        <i class="fas fa-info-circle text-gold text-base mt-0.5"></i>
+                        <div>
+                            <span class="text-white font-medium">Studio Submission Notice:</span> Your consultation request is routed to our Gmail inbox, and a confirmation email is sent to you after submission. For immediate inquiries, call <a href="tel:7325567388" class="text-gold underline">732-556-7388</a>.
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full bg-forestgreen hover:bg-forestlight text-white font-bold py-4 rounded-lg shadow-xl transition-all flex items-center justify-center gap-2 text-base border border-green-700/50">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Submit Consultation Request</span>
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkpanel border-t border-cardborder text-gray-400 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded bg-charcoal border border-gold/40 flex items-center justify-center">
+                        <span class="font-serif font-bold text-gold text-sm">NJ</span>
+                    </div>
+                    <span class="font-serif font-bold text-lg text-white">NJ GREEN DASH</span>
+                </div>
+                <p class="text-xs text-warmgrey leading-relaxed">
+                    Alternative treatment center (ATC) and medical dispensary consulting design firm for corporate, institutional, and state-approved ATC facilities in New Jersey.
+                </p>
+                <div class="text-xs text-gold font-semibold">
+                    Studio Line: <a href="tel:7325567388" class="underline">732-556-7388</a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-serif font-bold text-white text-sm uppercase tracking-wider mb-4">Studio Headquarters</h4>
+                <p class="text-xs text-warmgrey leading-relaxed">
+                    NJ Green Dash Studio<br>
+                    471 Mantoloking Road<br>
+                    Brick, NJ 08723<br>
+                    United States
+                </p>
+                <div class="mt-4 text-xs text-gold">
+                    <i class="fas fa-clock mr-1"></i> Mon-Fri: 9:00 AM - 6:00 PM
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-serif font-bold text-white text-sm uppercase tracking-wider mb-4">Consulting Services</h4>
+                <ul class="space-y-2 text-xs text-warmgrey">
+                    <li><a href="#services" class="hover:text-gold transition-colors">ATC Licensing & Applications</a></li>
+                    <li><a href="#services" class="hover:text-gold transition-colors">Facility Facade Design</a></li>
+                    <li><a href="#services" class="hover:text-gold transition-colors">Security & Vault Engineering</a></li>
+                    <li><a href="#services" class="hover:text-gold transition-colors">Municipal Zoning & Land Use</a></li>
+                    <li><a href="#pipe-nj" class="hover:text-gold transition-colors">Pipe NJ Featured Elevation</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-serif font-bold text-white text-sm uppercase tracking-wider mb-4">Credentials & Hosting</h4>
+                <p class="text-xs text-warmgrey mb-3">
+                    NCARB / Calibration Co. credentials stated by the business. Website package prepared for IONOS hosting.
+                </p>
+                <a href="tel:7325567388" class="inline-flex items-center gap-2 bg-forestgreen hover:bg-forestlight text-white font-semibold text-xs px-4 py-2.5 rounded-lg transition-colors border border-green-700/50">
+                    <i class="fas fa-phone-alt"></i> Call 732-556-7388
+                </a>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-12 mt-12 border-t border-cardborder flex flex-col sm:flex-row justify-between items-center text-xs text-warmgrey gap-4">
+            <div>&copy; 2026 NJ Green Dash Consulting Studio. NCARB / Calibration Co. Credentials. 471 Mantoloking Rd, Brick, NJ.</div>
+            <div class="flex gap-6">
+                <a href="#consultation" class="hover:text-gold transition-colors">Contact</a>
+                <a href="#services" class="hover:text-gold transition-colors">Services</a>
+                <a href="#hero" class="hover:text-gold transition-colors">Back to Top</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- IMAGE LIGHTBOX MODAL (Hidden by default) -->
+    <div id="imageModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex flex-col items-center justify-center p-4 sm:p-8">
+        <div class="relative max-w-5xl w-full max-h-[85vh] flex flex-col items-center">
+            <div class="w-full flex justify-between items-center mb-3 bg-darkpanel/80 px-4 py-2.5 rounded-t-xl border border-cardborder">
+                <span id="imageModalTitle" class="font-serif font-bold text-sm sm:text-base text-gold">Facility Drawing Viewer</span>
+                <button onclick="closeImageModal()" class="text-gray-400 hover:text-white p-1 text-lg focus:outline-none">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="bg-black border-x border-b border-cardborder rounded-b-xl overflow-hidden flex items-center justify-center p-2 w-full flex-1">
+                <img id="modalImageElement" src="" alt="Enlarged Facility Drawing" class="max-h-[70vh] object-contain rounded">
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', String(!isOpen));
+            mobileMenuBtn.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenuBtn.setAttribute('aria-label', 'Open navigation menu');
+            });
+        });
+
+        // Image Lightbox Modal functions
+        function openImageModal(imageSrc, imageTitle) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImageElement');
+            const modalTitle = document.getElementById('imageModalTitle');
+
+            modalImg.src = imageSrc;
+            modalTitle.textContent = imageTitle;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modals on Escape key
+        window.addEventListener('keydown', (e) => {
+            e.key === 'Escape' && closeImageModal();
+        });
+    </script>
+</body>
+</html>
