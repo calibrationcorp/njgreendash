@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+<defs>
+ <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#252a27"/><stop offset="1" stop-color="#101311"/></linearGradient>
+ <linearGradient id="gold" x2="1" y2="0"><stop stop-color="#f5d66e"/><stop offset="1" stop-color="#c39422"/></linearGradient>
+ <linearGradient id="glass" x2="0" y2="1"><stop stop-color="#6c8278" stop-opacity=".65"/><stop offset="1" stop-color="#17241d"/></linearGradient>
+ <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#b3bdaf" stroke-opacity=".11" stroke-width="1"/></pattern>
+</defs>
+<title id="title">NJ Green Dash conceptual storefront facade</title><desc id="desc">Illustrative architectural storefront elevation, not a construction or approved project rendering.</desc>
+
+<rect width="1200" height="700" fill="url(#bg)"/><rect width="1200" height="700" fill="url(#grid)"/>
+<path d="M0 575H1200" stroke="#d4af37" stroke-opacity=".55" stroke-width="3"/><path d="M60 576L170 638H1030L1140 576" fill="#111613" stroke="#556056" stroke-width="3"/>
+<rect x="105" y="210" width="990" height="355" rx="7" fill="#242c27" stroke="#68736a" stroke-width="5"/>
+<rect x="130" y="240" width="940" height="75" fill="#111714" stroke="#d4af37" stroke-opacity=".55" stroke-width="2"/>
+<rect x="150" y="338" width="260" height="205" fill="url(#glass)" stroke="#9baf9f" stroke-width="4"/><rect x="425" y="338" width="340" height="205" fill="#152019" stroke="#748276" stroke-width="4"/><rect x="780" y="338" width="290" height="205" fill="url(#glass)" stroke="#9baf9f" stroke-width="4"/>
+<path d="M440 348H750V536H440Z" fill="#1a221d"/><path d="M595 348V536" stroke="#627368" stroke-width="5"/><rect x="525" y="370" width="140" height="75" rx="7" fill="#101713" stroke="#d4af37" stroke-width="2"/><path d="M565 387l30 -15 30 15v36h-60z" fill="none" stroke="url(#gold)" stroke-width="4"/><text x="595" y="466" text-anchor="middle" fill="#f4e6b8" font-family="Arial,sans-serif" font-size="22" letter-spacing="5">NJ GREEN DASH</text>
+<rect x="455" y="256" width="290" height="42" rx="5" fill="#16211a" stroke="#d4af37" stroke-width="2"/><text x="600" y="284" text-anchor="middle" fill="#f1ce62" font-family="Georgia,serif" font-size="23" letter-spacing="6">THE PIPE NJ</text>
+<g fill="#1d3024" stroke="#71816d" stroke-width="2"><path d="M82 565q-10 -55 20 -100q40 34 25 100z"/><path d="M1010 565q-10 -60 25 -110q37 40 20 110z"/><path d="M45 565q-3 -36 22 -70q27 32 18 70z"/><path d="M1080 565q-6 -36 20 -76q27 33 19 76z"/></g>
+<g fill="#d4af37"><circle cx="90" cy="545" r="4"/><circle cx="1070" cy="548" r="4"/><circle cx="112" cy="520" r="3"/></g>
+<text x="600" y="665" text-anchor="middle" fill="#d4af37" font-family="Arial,sans-serif" font-size="18" letter-spacing="4">ILLUSTRATIVE CONCEPT VISUAL · NOT AN APPROVED RENDERING</text>
+
+</svg>
