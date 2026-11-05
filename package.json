@@ -1,0 +1,1 @@
+{"name":"njgreendash-site","version":"1.0.0","private":true,"description":"NJ Green Dash consulting website","scripts":{"start":"node server.js"}}
