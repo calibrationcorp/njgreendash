@@ -81,4 +81,27 @@ app.post("/api/contact", async (req, res) => {
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, "0.0.0.0", () => console.log("NJ Green Dash email API listening on " + port));
+app.listen(port, "0.0.0.0", async () => {
+  console.log("NJ Green Dash email API listening on " + port);
+  const configured = Boolean(process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD);
+  console.log("Gmail credentials configured: " + configured);
+  if (configured) {
+    const check = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: { user: process.env.GMAIL_USER, pass: process.env.GMAIL_APP_PASSWORD },
+      connectionTimeout: 10000,
+      greetingTimeout: 10000,
+      socketTimeout: 15000
+    });
+    try {
+      await check.verify();
+      console.log("Gmail SMTP authentication and connection verified.");
+    } catch (error) {
+      console.error("Gmail SMTP verification failed:", error.message);
+    } finally {
+      check.close();
+    }
+  }
+});
