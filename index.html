@@ -44,7 +44,36 @@
 <article class="plan"><svg viewBox="0 0 320 180" role="img" aria-label="Sample site planning concept"><rect x="12" y="10" width="296" height="160" fill="#f5f8f3" stroke="#193c28" stroke-width="3"/><rect x="78" y="35" width="160" height="90" fill="#dfe9dc" stroke="#193c28" stroke-width="2"/><path d="M12 145H308M45 10V170M270 10V170" stroke="#6d9a72" stroke-width="2" stroke-dasharray="5 4"/><g fill="#193c28" font-size="12" text-anchor="middle"><text x="158" y="75">Facility</text><text x="158" y="93">Footprint</text><text x="158" y="160">Access & Circulation</text></g></svg><div><h3>Site Planning & Layout</h3><p>Building footprint, access, circulation and site relationships.</p></div></article>
 </div></div></section>
 <section class="why"><div class="wrap whygrid"><div class="whyitem"><i>♧</i><div><strong>Regulatory Expertise</strong><span>Navigate New Jersey requirements with informed guidance.</span></div></div><div class="whyitem"><i>🤝</i><div><strong>Tailored Solutions</strong><span>Facility concepts shaped around your operational goals.</span></div></div><div class="whyitem"><i>⌁</i><div><strong>Maximized Efficiency</strong><span>Thoughtful space planning and practical workflows.</span></div></div><div class="whyitem"><i>⬡</i><div><strong>Trusted Partner</strong><span>Support from early planning through project coordination.</span></div></div></div></section>
-<section class="contact" id="contact"><div class="wrap"><div class="contactbox"><h2>Let’s Bring Your Vision to Life</h2><p>Tell us about your facility concept and we’ll follow up to discuss the next steps.</p><form class="formgrid" action="https://formsubmit.co/calibrationcorp.network@gmail.com" method="POST"><input type="hidden" name="_subject" value="New NJ Green Dash Website Inquiry"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="true"><input type="text" name="_honey" style="display:none"><input name="name" placeholder="Your name" autocomplete="name" required><input name="email" type="email" placeholder="Email address" autocomplete="email" required><input name="phone" type="tel" placeholder="Phone number" autocomplete="tel"><select name="project"><option>Dispensary design</option><option>Cultivation facility</option><option>Processing facility</option><option>Site planning / consulting</option><option>Other project</option></select><textarea name="details" placeholder="Tell us about your project"></textarea><button class="btn" type="submit">Send Message →</button></form></div></div></section>
+<section class="contact" id="contact"><div class="wrap"><div class="contactbox"><h2>Let’s Bring Your Vision to Life</h2><p>Tell us about your facility concept and we’ll follow up to discuss the next steps.</p><form class="formgrid" id="contact-form"><input name="name" placeholder="Your name" autocomplete="name" required><input name="email" type="email" placeholder="Email address" autocomplete="email" required><input name="phone" type="tel" placeholder="Phone number" autocomplete="tel"><select name="project"><option>Dispensary design</option><option>Cultivation facility</option><option>Processing facility</option><option>Site planning / consulting</option><option>Other project</option></select><textarea name="details" placeholder="Tell us about your project"></textarea><button class="btn" id="contact-submit" type="submit">Send Message →</button><p id="contact-status" role="status" aria-live="polite" style="grid-column:1/-1;margin:0;font-size:12px"></p></form></div></div></section>
 </main>
 <footer class="footer"><div class="wrap"><div class="footin"><a class="brand" href="#home"><span class="leaf">❧</span><span><strong>NJ Green Dash</strong><small>DESIGN · PLAN · COMPLY · GROW</small></span></a><nav class="footlinks"><a href="#services">Services</a><a href="#showcase">Sample Designs</a><a href="#plans">Plans</a><a href="#contact">Contact</a></nav><a class="btn lime" href="#contact">Schedule a Consultation →</a></div><div class="copyright"><span>© 2026 NJ Green Dash. All rights reserved.</span><span>New Jersey cannabis facility design & consulting.</span></div></div></footer>
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", async function(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const button = document.getElementById("contact-submit");
+  const status = document.getElementById("contact-status");
+  button.disabled = true;
+  button.textContent = "Sending…";
+  status.textContent = "";
+  const payload = Object.fromEntries(new FormData(form).entries());
+  try {
+    const response = await fetch("https://njgreendash-email-api.onrender.com/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || "Message could not be sent.");
+    status.textContent = "Thank you. Your message has been sent, and a confirmation email is on its way.";
+    form.reset();
+  } catch (error) {
+    status.textContent = error.message + " You can also email njgreendash@gmail.com directly.";
+  } finally {
+    button.disabled = false;
+    button.textContent = "Send Message →";
+  }
+});
+</script>
 </body></html>
