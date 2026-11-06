@@ -14,12 +14,12 @@
 <script src="projects.js"></script><script src="facility-visuals.js"></script><script>
 (function(){
 const params=new URLSearchParams(location.search),id=Number(params.get('id')||1),p=window.NJGD_PROJECTS.find(x=>x.id===id)||window.NJGD_PROJECTS[0];
-document.title=p.name+' | NJ Green Dash Concept Study';document.querySelector('#title').textContent=p.name;document.querySelector('#category').textContent=p.type;document.querySelector('#area').textContent=p.sf+' SF';document.querySelector('#number').textContent=p.id+' / 20';document.querySelector('#lead').textContent=p.description+'. Explore exterior inspiration, interior references, top-down space relationships and consulting priorities.';document.querySelector('#previous-project').href='project.html?id='+(p.id===1?20:p.id-1);document.querySelector('#next-project').href='project.html?id='+(p.id===20?1:p.id+1);document.querySelector('#main-photo').innerHTML=NJGD_VISUALS.exterior(p);
-document.querySelector('#interior-photo').innerHTML=NJGD_VISUALS.interior(p,0);
-document.querySelector('#work-photo').innerHTML=NJGD_VISUALS.interior(p,1);
-document.querySelector('#plan-diagram').innerHTML=NJGD_VISUALS.plan(p);
-document.querySelector('#axon-diagram').innerHTML=NJGD_VISUALS.axon(p);
-document.querySelector('#elevation-diagram').innerHTML=NJGD_VISUALS.elevations(p);
+document.title=p.name+' | NJ Green Dash Concept Study';document.querySelector('#title').textContent=p.name;document.querySelector('#category').textContent=p.type;document.querySelector('#area').textContent=p.sf+' SF';document.querySelector('#number').textContent=p.id+' / 20';document.querySelector('#lead').textContent=p.description+'. Explore exterior inspiration, interior references, top-down space relationships and consulting priorities.';document.querySelector('#previous-project').href='project.html?id='+(p.id===1?20:p.id-1);document.querySelector('#next-project').href='project.html?id='+(p.id===20?1:p.id+1);const asset=k=>'assets/concepts/'+String(p.id).padStart(2,'0')+'-'+k+'.svg';document.querySelector('#main-photo').innerHTML='<img class="img" src="'+asset('exterior')+'" alt="Exterior concept for '+p.name+'">';
+document.querySelector('#interior-photo').innerHTML='<img class="img" src="'+asset('interior')+'" alt="interior concept image for '+p.name+'">';
+document.querySelector('#work-photo').innerHTML='<img class="img" src="'+asset('interior')+'" alt="Operational interior concept for '+p.name+'">';
+document.querySelector('#plan-diagram').innerHTML='<img class="img" src="'+asset('plan')+'" alt="plan concept image for '+p.name+'">';
+document.querySelector('#axon-diagram').innerHTML='<img class="img" src="'+asset('axon')+'" alt="axon concept image for '+p.name+'">';
+document.querySelector('#elevation-diagram').innerHTML='<img class="img" src="'+asset('elevations')+'" alt="elevations concept image for '+p.name+'">';
 const items=[['Facility feasibility','Review location, proposed use and local approvals before committing to an existing building.'],['Operational circulation','Discuss visitor, staff and inventory flow and potential fit-out scenarios.'],['NJ-CRC coordination','Track current requirements for the intended license category. Regulatory approval is not represented or guaranteed.']];
 document.querySelector('#notes').innerHTML=items.map(item=>'<div class="note"><b>'+item[0]+'</b><p>'+item[1]+'</p></div>').join('');
 
