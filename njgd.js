@@ -5,7 +5,7 @@ const link=p=>p.slug||("project-"+hid(p.id)+".html");
 const safe=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const card=p=>'<a class="projectcard" href="'+safe(link(p))+'" aria-label="Explore '+safe(p.name)+'"><figure><img src="'+safe(p.exterior)+'" loading="lazy" alt="Generated exterior visualization of '+safe(p.name)+'"></figure><div class="cardtext"><strong>'+safe(p.name)+'</strong><small>'+safe(p.type)+' · '+safe(p.sf)+' SF · View study →</small></div></a>';
 function initNav(){const t=$("mobile-toggle"),n=$("navlinks");if(t&&n)t.addEventListener("click",()=>{const open=n.classList.toggle("open");t.setAttribute("aria-expanded",String(open))});}
-function initHome(){const el=$("featured-projects");if(el)el.innerHTML=P.map(card).join("");}
+function initHome(){const el=$("featured-projects");if(el)el.innerHTML=P.slice(0,6).concat(P.slice(20)).map(card).join("");}
 function initPortfolio(){const el=$("all-projects"),input=$("portfolio-search"),count=$("project-count"),filters=$("project-filters");if(!el)return;let active="All";
 const show=()=>{const search=(input?.value||"").toLowerCase().trim();const data=P.filter(p=>(active==="All"||p.type===active)&&[p.name,p.description,p.type].join(" ").toLowerCase().includes(search));el.innerHTML=data.map(card).join("");if(count)count.textContent="Showing "+data.length+" of "+P.length+" illustrative studies.";};
 if(input)input.addEventListener("input",show);
@@ -16,13 +16,23 @@ const set=(id,text)=>{const el=$(id);if(el)el.textContent=text};
 const put=(id,path,alt)=>{const img=$(id);if(img){img.src=path;img.alt=alt}};
 set("project-name",p.name);set("project-type",p.type);set("project-area",p.sf+" SF");set("project-summary",p.description);
 put("project-cover",p.exterior,"Generated exterior concept for "+p.name);
-put("project-axon","assets/technical/"+hid(id)+"-axon.svg","3D diagram for "+p.name);
-put("project-plan","assets/technical/"+hid(id)+"-plan.svg","CAD-style illustrative floor plan for "+p.name);
-put("project-elevations","assets/technical/"+hid(id)+"-elevations.svg","Concept exterior elevations for "+p.name);
-put("project-site","assets/technical/"+hid(id)+"-site.svg","Illustrative landscaped site diagram for "+p.name);
-put("interior-main",p.interior,"Generated interior visualization for "+p.name);
-put("interior-secondary",p.type.includes("Cultivation")?"assets/new/cultivation-interior.jpg":p.type.includes("Retail")||p.type.includes("Medicinal")?"assets/new/dispensary-interior.jpg":"assets/new/processing-interior.jpg","Related facility fit-out illustration");
-put("interior-third",p.type.includes("Cultivation")?"assets/new/processing-interior.jpg":p.type.includes("Retail")||p.type.includes("Medicinal")?"assets/new/retail-exterior.jpg":"assets/new/facility-3d-layout.jpg","Related concept support visualization");
+const drawings = [
+  ["axon", "project-axon", "3D organization diagram"],
+  ["plan", "project-plan", "Concept zoning plan"],
+  ["elevations", "project-elevations", "Concept exterior elevations"],
+  ["site", "project-site", "Site and landscape concept"],
+];
+for (const [key, target, label] of drawings) {
+  if (p.drawings[key]) put(target, p.drawings[key], label + " for " + p.name);
+}
+const gallery = document.querySelector(".interiorgrid");
+if (gallery) {
+  gallery.classList.add("portfolio-gallery");
+  gallery.innerHTML = p.gallery.map(({src, caption}) =>
+    '<figure><img src="' + safe(src) + '" alt="' + safe(caption + " for " + p.name) +
+    '" loading="lazy"><figcaption>' + safe(caption) + '</figcaption></figure>'
+  ).join("");
+}
 put("presentation-board",p.board,"Full uncropped project case study presentation board");
 const list=[["Consulting Story",s.story],["Principal Hurdles",s.challenge],["Proposed Planning Approach",s.approach],["High Points",s.high],["Limitations / Risks",s.low],["Licensing Questions (Not Cleared)",s.licensing],["Key Takeaway",s.takeaway],["Site & Landscape",s.site]];
 const rows=$("case-rows");if(rows)rows.innerHTML=list.map(([h,c])=>'<div class="case-row"><dt>'+safe(h)+'</dt><dd>'+safe(c)+'</dd></div>').join("");
