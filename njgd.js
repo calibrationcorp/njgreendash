@@ -3,9 +3,17 @@ const $=id=>document.getElementById(id),P=window.NJGD_PROJECTS||[],C=window.NJGD
 const hid=x=>String(x).padStart(2,"0");
 const link=p=>p.slug||("project-"+hid(p.id)+".html");
 const safe=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const card=p=>'<a class="projectcard" href="'+safe(link(p))+'" aria-label="Explore '+safe(p.name)+'"><figure><img src="'+safe(p.exterior)+'" loading="lazy" alt="Generated exterior visualization of '+safe(p.name)+'"></figure><div class="cardtext"><strong>'+safe(p.name)+'</strong><small>'+safe(p.type)+' · '+safe(p.sf)+' SF · View study →</small></div></a>';
+const card=p=>`<a class="projectcard" href="${safe(link(p))}">
+  <figure><img src="${safe(p.exterior)}" loading="lazy" alt=""></figure>
+  <div class="cardtext">
+    <small class="card-category">${safe(p.type)} · ${safe(p.sf)} SF</small>
+    <strong>${safe(p.name)}</strong>
+    ${p.design ? `<span class="card-design">${safe(p.design)}</span>` : ""}
+    <span class="card-link">View study →</span>
+  </div>
+</a>`;
 function initNav(){const t=$("mobile-toggle"),n=$("navlinks");if(t&&n)t.addEventListener("click",()=>{const open=n.classList.toggle("open");t.setAttribute("aria-expanded",String(open))});}
-function initHome(){const el=$("featured-projects");if(el)el.innerHTML=P.slice(0,6).concat(P.slice(20)).map(card).join("");}
+function initHome(){const el=$("featured-projects");if(el)el.innerHTML=[4,6,9,1,2,3,5,21,22,23,24,25,26].map(id=>P.find(p=>p.id===id)).filter(Boolean).map(card).join("");}
 function initPortfolio(){const el=$("all-projects"),input=$("portfolio-search"),count=$("project-count"),filters=$("project-filters");if(!el)return;let active="All";
 const show=()=>{const search=(input?.value||"").toLowerCase().trim();const data=P.filter(p=>(active==="All"||p.type===active)&&[p.name,p.description,p.type].join(" ").toLowerCase().includes(search));el.innerHTML=data.map(card).join("");if(count)count.textContent="Showing "+data.length+" of "+P.length+" illustrative studies.";};
 if(input)input.addEventListener("input",show);
@@ -15,7 +23,7 @@ function initProject(){const node=document.body,id=Number(node.dataset.id||new U
 const set=(id,text)=>{const el=$(id);if(el)el.textContent=text};
 const put=(id,path,alt)=>{const img=$(id);if(img){img.src=path;img.alt=alt}};
 set("project-name",p.name);set("project-type",p.type);set("project-area",p.sf+" SF");set("project-summary",p.description);
-put("project-cover",p.exterior,"Generated exterior concept for "+p.name);
+put("project-cover",p.approach || p.exterior,"Generated exterior concept for "+p.name);
 const drawings = [
   ["axon", "project-axon", "3D organization diagram"],
   ["plan", "project-plan", "Concept zoning plan"],

@@ -3,3 +3,55 @@
 .portfolio-gallery figure:only-child { grid-column: 1 / -1; }
 .portfolio-gallery img { width: 100%; height: auto; }
 @media (max-width: 600px) { .portfolio-gallery { grid-template-columns: minmax(0, 1fr); } }
+
+/* Facility study cards and project visuals */
+.projectcard {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.projectcard:focus-visible {
+  outline: 3px solid #6ba834;
+  outline-offset: 3px;
+}
+.projectcard figure {
+  height: auto;
+  aspect-ratio: 1.55;
+}
+.projectcard img {
+  display: block;
+  height: 100%;
+}
+.projectcard .cardtext {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 7px;
+  padding: 13px 15px 15px;
+}
+.projectcard .card-category {
+  margin: 0;
+  font-size: 12px;
+}
+.projectcard strong {
+  font-size: clamp(15px, 1.2vw, 18px);
+}
+.card-design {
+  font-size: 13px;
+}
+.card-link {
+  padding-top: 5px;
+  margin-top: auto;
+  font-size: 13px;
+  font-weight: 700;
+}
+.visual-grid:has(> :only-child) {
+  grid-template-columns: minmax(0, 1fr);
+}
+.visual-grid > :only-child img {
+  max-height: 620px;
+}
+.hero-main > img {
+  object-position: 68% center;
+}
