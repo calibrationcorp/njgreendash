@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
-Sitemap: https://njgreendash.com/sitemap.xml
+
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://www.njgreendash.com/sitemap.xml
