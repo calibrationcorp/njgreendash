@@ -5,6 +5,6 @@
   "description": "NJ Green Dash consulting website",
   "scripts": {
     "start": "node server.js",
-    "test": "node visual-integrity.test.js"
+    "test": "node --check pdf-download.js && node --check projects.js && node visual-integrity.test.js"
   }
 }
