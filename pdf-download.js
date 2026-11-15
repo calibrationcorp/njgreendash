@@ -13,12 +13,12 @@ const views=[
 ["ALTERNATE EXTERIOR APPROACH",p.approach,"Illustrative approach and façade materials."],
 ...p.gallery.map(({src,caption})=>[caption.toUpperCase(),src,"Illustrative facility concept."]),
 ["SITE & LANDSCAPE CONCEPT",tech("site"),s.site],
-["3D FACILITY ORGANIZATION",tech("axon"),"Illustrative space relationships; not a measured building model."],
+[([4,6,9].includes(p.id)?"ADDITIONAL PHOTOREALISTIC FACILITY VIEW":"3D FACILITY ORGANIZATION"),([4,6,9].includes(p.id)?p.approach:tech("axon")),"Illustrative conceptual views; not a measured building model."],
 ["FUNCTIONAL ZONING PLAN",tech("plan"),"Concept room adjacencies only; no measurable construction dimensions or permit status."],
 ["CONCEPT ELEVATIONS",tech("elevations"),"Concept facade expressions; not measured or certified elevations."]
 ];
 for(const [name,url,caption] of views.filter(([,url])=>url)){const pic=await img(url),{canvas,ctx,w,h}=sheet(p,logo,name);ctx.fillStyle="#eff5ec";ctx.fillRect(48,293,w-96,h-433);contain(ctx,pic,60,306,w-120,h-460);ctx.fillStyle="#355841";lines(ctx,caption,65,h-131,w-130,17,23,2);pages.push(canvas);}
-{const pic=await img(p.board),{canvas,ctx,w,h}=sheet(p,logo,"PROJECT DESIGN BOARD",true);ctx.fillStyle="#edf3ec";ctx.fillRect(42,287,w-84,h-414);contain(ctx,pic,50,295,w-100,h-430);pages.push(canvas);}
+{const {canvas,ctx,w,h}=sheet(p,logo,"PROJECT DESIGN BOARD",true);ctx.fillStyle="#edf3ec";ctx.fillRect(42,287,w-84,h-414);if([4,6,9].includes(p.id)){const pictures=await Promise.all([p.exterior,p.interior,p.drawings.site].map(img));const slots=[{x:50,y:295,w:w-100,h:530,label:"EXTERIOR"},{x:50,y:850,w:(w-125)/2,h:540,label:"INTERIOR"},{x:(w+25)/2,y:850,w:(w-125)/2,h:540,label:"AERIAL & LANDSCAPING"}];for(let i=0;i<3;i++){const r=slots[i];ctx.fillStyle="#fff";ctx.fillRect(r.x,r.y,r.w,r.h);contain(ctx,pictures[i],r.x+6,r.y+6,r.w-12,r.h-55);ctx.fillStyle="#19432f";setFont(ctx,17,true);ctx.fillText(r.label,r.x+12,r.y+r.h-18);}}else{const pic=await img(p.board);contain(ctx,pic,50,295,w-100,h-430);}pages.push(canvas);}
 return pages;}
 function makePdf(canvases){const objects=[E.encode("<< /Type /Catalog /Pages 2 0 R >>"),null,E.encode("<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>")];const ids=[];for(let i=0;i<canvases.length;i++)ids.push(4+i*3);
 objects[1]=E.encode("<< /Type /Pages /Kids ["+ids.map(n=>n+" 0 R").join(" ")+"] /Count "+ids.length+" >>");
