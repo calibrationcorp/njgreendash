@@ -37,3 +37,26 @@ for (const project of projects) {
 }
 console.log("Passed: " + pageFiles.length + " HTML pages, " + images + " image tags, " +
   technicalLinks + " technical links, " + projectAssets + " project image references. No inline SVG portfolio images or missing local assets.");
+
+
+const newsPage=fs.readFileSync(path.join(root,"news.html"),"utf8");
+const newsScript=fs.readFileSync(path.join(root,"news.js"),"utf8");
+const newsCache=JSON.parse(fs.readFileSync(path.join(root,"news-cache.json"),"utf8"));
+assert(newsPage.includes('id="news-grid"'),"News page must have headline container");
+assert(newsScript.includes("news-cache.json"),"News page must support static fallback");
+assert(newsScript.includes("/api/news"),"News page must support live headlines");
+assert(fs.existsSync(path.join(root,"news-feed-fetch.js")),"Scheduled RSS fetcher missing");
+assert(fs.existsSync(path.join(root,".github/workflows/refresh-news.yml")),"Scheduled refresh workflow missing");
+assert(fs.readFileSync(path.join(root,"sitemap.xml"),"utf8").includes("/news.html"),"Sitemap missing news page");
+for(const category of ["cannabis","psychedelics"]){
+ assert(newsCache.topics?.[category],"Missing cache topic "+category);
+ for(const article of newsCache.topics[category].articles){
+  assert(article.title&&/^https:\/\//.test(article.link)&&!Number.isNaN(Date.parse(article.published)),"Invalid cached news article");
+ }
+}
+for(const page of pageFiles){
+ if(page==="news.html")continue;
+ const html=fs.readFileSync(path.join(root,page),"utf8");
+ assert(html.includes('href="news.html"'),page+": missing Industry News navigation");
+}
+console.log("Passed: news links on every HTML page, valid news snapshots, scheduled refresh, and live/static fallback.");
