@@ -57,3 +57,10 @@
 }
 
 .projectcard[hidden] { display: none; }
+
+/* Project-specific design board layout, used by every case study page. */
+.njgd-design-board-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0}
+.njgd-design-board-grid figure{margin:0;background:#fff;border:1px solid #d5dfd7;border-radius:12px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.08)}
+.njgd-design-board-grid img{display:block;width:100%;height:clamp(220px,27vw,410px);object-fit:cover;background:#eef2ed}
+.njgd-design-board-grid figcaption{padding:12px 18px;font-size:.88rem;letter-spacing:.055em;font-weight:750;color:#164631;text-transform:uppercase}
+@media(max-width:700px){.njgd-design-board-grid{grid-template-columns:1fr}.njgd-design-board-grid img{height:auto;aspect-ratio:4/3;object-fit:contain}}
