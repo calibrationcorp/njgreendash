@@ -55,7 +55,7 @@ for(const category of ["cannabis","psychedelics"]){
  }
 }
 for(const page of pageFiles){
- if(!(/^(?:index|portfolio|project-\d{2})\\.html$/.test(page)))continue;
+ if(!(/^(?:index|portfolio|project-\d{2})\.html$/.test(page)))continue;
  const html=fs.readFileSync(path.join(root,page),"utf8");
  assert(html.includes('href="news.html"'),page+": missing Industry News navigation");
 }
