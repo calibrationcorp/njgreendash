@@ -1,0 +1,13 @@
+{
+  "updatedAt": null,
+  "topics": {
+    "cannabis": {
+      "updatedAt": null,
+      "articles": []
+    },
+    "psychedelics": {
+      "updatedAt": null,
+      "articles": []
+    }
+  }
+}
