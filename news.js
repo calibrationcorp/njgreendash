@@ -2,44 +2,82 @@
 const buttons=[...document.querySelectorAll('[data-topic]')];
 const grid=document.getElementById('news-grid');
 const status=document.getElementById('news-status');
+const refreshButton=document.getElementById('news-refresh');
 let active='cannabis';
 let sequence=0;
-function showMessage(message){grid.replaceChildren();const p=document.createElement('p');p.className='news-empty';p.textContent=message;grid.append(p);}
-async function load(topic){
- const current=++sequence;active=topic;
- buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.topic===topic)));
- status.textContent='Loading recent '+(topic==='cannabis'?'cannabis':'psychedelics')+' headlines…';
+
+const searches={
+ cannabis:'https://news.google.com/search?q=cannabis%20marijuana%20regulation&hl=en-US&gl=US&ceid=US%3Aen',
+ psychedelics:'https://news.google.com/search?q=psychedelics%20psilocybin%20research&hl=en-US&gl=US&ceid=US%3Aen'
+};
+function safeDate(value){
+ const time=new Date(value||'');
+ return Number.isNaN(time.getTime())?'Date unavailable':time.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'});
+}
+function addSourceLink(topic){
+ const p=document.createElement('p');
+ p.className='news-empty';
+ p.textContent='You can still browse the latest headlines directly from Google News while this feed is unavailable.';
+ const a=document.createElement('a');
+ a.href=searches[topic];
+ a.textContent='Browse current '+(topic==='cannabis'?'cannabis and marijuana':'psychedelics')+' headlines';
+ a.target='_blank';a.rel='noopener noreferrer';
+ p.append(document.createElement('br'),a);grid.append(p);
+}
+function showArticles(data,topic,source){
  grid.replaceChildren();
+ const articles=Array.isArray(data?.articles)?data.articles:[];
+ let shown=0;
+ for(const article of articles){
+  let target;
+  try {target=new URL(article.link)}catch {continue}
+  if(target.protocol!=='https:')continue;
+  const card=document.createElement('article');card.className='news-card';
+  const meta=document.createElement('div');meta.className='meta';
+  meta.textContent=(article.source||'News source')+' · '+safeDate(article.published);
+  const heading=document.createElement('h2');
+  const link=document.createElement('a');link.href=target.href;link.target='_blank';link.rel='noopener noreferrer';link.textContent=article.title||'Read coverage';
+  heading.append(link);card.append(meta,heading);grid.append(card);shown++;
+ }
+ if(!shown)addSourceLink(topic);
+ const date=data?.updatedAt?safeDate(data.updatedAt):'Not yet refreshed';
+ status.textContent=(shown?shown+' headlines · ':'')+(source==='live'?'Live news':'Latest saved headlines')+' · Last updated '+date;
+ return shown;
+}
+async function fetchJSON(url,timeoutMs){
+ const controller=new AbortController();
+ const timeout=setTimeout(()=>controller.abort(),timeoutMs);
  try {
-  let data, source='live';
-  try {
-   const response=await fetch('/api/news?category='+encodeURIComponent(topic),{headers:{Accept:'application/json'},signal:AbortSignal.timeout(6500)});
-   if(!response.ok)throw new Error('Live feed unavailable');
-   data=await response.json();
-   if(!Array.isArray(data.articles)||!data.articles.length)throw new Error('Empty live feed');
-  }catch(error){
-   source='cached';
-   const response=await fetch('news-cache.json?v=20261116',{cache:'no-store',signal:AbortSignal.timeout(6500)});
-   if(!response.ok)throw new Error('Cached feed unavailable');
-   const snapshot=await response.json();
-   data=snapshot.topics?.[topic]||{articles:[],updatedAt:null};
-  }
-  if(current!==sequence)return;
-  const articles=Array.isArray(data.articles)?data.articles:[];
-  if(!articles.length){showMessage('Automatic headlines are temporarily unavailable. Open the live search below for current reporting.');const link=document.createElement('a');link.href=topic==='cannabis'?'https://news.google.com/search?q=cannabis%20marijuana':'https://news.google.com/search?q=psychedelic%20psilocybin';link.target='_blank';link.rel='noopener noreferrer';link.textContent='Browse current '+topic+' news on Google News';grid.append(link);}
-  articles.forEach(a=>{
-   let url;try{url=new URL(a.link);}catch{return;}
-   if(url.protocol!=='https:')return;
-   const card=document.createElement('article');card.className='news-card';
-   const meta=document.createElement('div');meta.className='meta';
-   const date=new Date(a.published);
-   meta.textContent=(a.source||'News source')+' · '+(Number.isNaN(date.getTime())?'Date unavailable':date.toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'}));
-   const title=document.createElement('h2');const link=document.createElement('a');link.href=url.href;link.target='_blank';link.rel='noopener noreferrer';link.textContent=a.title;title.append(link);
-   card.append(meta,title);grid.append(card);
-  });
-  status.textContent='Source: '+(source==='cached'?'scheduled news snapshot':'live news service')+' · Last updated: '+(data.updatedAt?new Date(data.updatedAt).toLocaleString():'Not yet refreshed')+(data.stale?' · Showing last available results':'')+' · '+articles.length+' headlines';
- }catch(e){if(current!==sequence)return;status.textContent='News feed temporarily unavailable';showMessage('Headlines could not be loaded. Please try Refresh headlines shortly.');}
+  const response=await fetch(url,{cache:'no-store',headers:{Accept:'application/json'},signal:controller.signal});
+  if(!response.ok)throw Error('HTTP '+response.status);
+  return await response.json();
+ }finally{clearTimeout(timeout)}
+}
+async function load(topic){
+ active=topic;
+ const serial=++sequence;
+ buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.topic===topic)));
+ status.textContent='Loading '+topic+' headlines…';
+ grid.replaceChildren();
+ // Show a useful link immediately, even if neither endpoint is available.
+ addSourceLink(topic);
+ let savedCount=0;
+ try {
+  const snapshot=await fetchJSON('news-cache.json?v=20261116b',4500);
+  if(serial!==sequence)return;
+  const saved=snapshot?.topics?.[topic];
+  if(saved)savedCount=showArticles(saved,topic,'saved');
+ }catch(error){if(serial!==sequence)return;status.textContent='Saved news temporarily unavailable; live news still loading…'}
+ try {
+  const live=await fetchJSON('/api/news?category='+encodeURIComponent(topic),5500);
+  if(serial!==sequence)return;
+  if(Array.isArray(live?.articles)&&live.articles.length)showArticles(live,topic,'live');
+  else if(!savedCount)status.textContent='Headlines not available here — use the source link below.';
+ }catch(error){
+  if(serial!==sequence)return;
+  if(!savedCount)status.textContent='News service not reachable — use the source link below.';
+ }
 }
 buttons.forEach(b=>b.addEventListener('click',()=>load(b.dataset.topic)));
-document.getElementById('news-refresh').addEventListener('click',()=>load(active));
+refreshButton?.addEventListener('click',()=>load(active));
 load(active);
