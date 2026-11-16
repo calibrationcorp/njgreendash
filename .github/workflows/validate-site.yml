@@ -1,0 +1,32 @@
+name: Validate NJ Green Dash site
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  site-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check JavaScript syntax
+        run: |
+          node --check server.js
+          node --check news.js
+          node --check news-feed-fetch.js
+          node --check visual-integrity.test.js
+      - name: Test portfolio assets and news navigation
+        run: npm test
+      - name: Smoke test HTTP server and news response
+        run: |
+          node server.js &
+          PID=$!
+          trap 'kill $PID || true' EXIT
+          node -e "setTimeout(() => { fetch('http://127.0.0.1:3000/news.html').then(async r => {if (!r.ok || !(await r.text()).includes('news-grid')) process.exit(1)}).catch(() => process.exit(1)) }, 700)"
+          node -e "fetch('http://127.0.0.1:3000/news-cache.json').then(async r => {const j=await r.json();if(!j.topics.cannabis || !j.topics.psychedelics)process.exit(1)}).catch(()=>process.exit(1))"
