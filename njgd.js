@@ -19,6 +19,35 @@ if(input)input.addEventListener("input",show);
 if(filters)filters.addEventListener("click",e=>{const b=e.target.closest("[data-filter]");if(!b)return;active=b.dataset.filter;for(const t of filters.querySelectorAll("button"))t.classList.toggle("active",t===b);show()});
 show();}
 function initProject(){const node=document.body,id=Number(node.dataset.id||new URLSearchParams(location.search).get("id")||1),p=P.find(x=>x.id===id),s=C.find(x=>x.id===id);if(!p||!s)return;
+const overview=$("overview");
+if(overview&&!document.getElementById("project-design-board")){
+ const section=document.createElement("section");
+ section.className="section anchor";section.id="project-design-board";
+ const wrap=document.createElement("div");wrap.className="container";
+ const title=document.createElement("h2");title.textContent="Project Design Board";
+ const intro=document.createElement("p");intro.textContent="Coordinated concept images for this specific facility. These are illustrative planning studies, not measured or approved construction documents.";
+ wrap.append(title,intro);
+ const grid=document.createElement("div");grid.className="njgd-design-board-grid";
+ const sources=[
+  ["Exterior perspective",p.exterior],
+  ["Interior perspective",p.interior],
+  ["Site and landscape",p.drawings?.site&&!p.drawings.site.endsWith(".svg")?p.drawings.site:null],
+  ["Presentation overview",p.board]
+ ];
+ const seen=new Set();
+ for(const [label,src] of sources){
+  if(!src||seen.has(src))continue;seen.add(src);
+  const figure=document.createElement("figure");
+  const photo=document.createElement("img");photo.src=src;photo.alt=p.name+" — "+label;photo.loading="lazy";
+  const caption=document.createElement("figcaption");caption.textContent=label;
+  figure.append(photo,caption);grid.appendChild(figure);
+ }
+ wrap.appendChild(grid);
+ const note=document.createElement("p");note.className="muted";note.textContent="Additional rear, side and top-down photorealistic views will be displayed only when project-matched renderings are available.";
+ wrap.appendChild(note);section.appendChild(wrap);overview.before(section);
+ const nav=document.querySelector(".tabnav");
+ if(nav&&!nav.querySelector('a[href="#project-design-board"]')){const a=document.createElement("a");a.href="#project-design-board";a.textContent="Design Board";nav.prepend(a);}
+}
 const pdf=$("pdf-button");if(pdf)pdf.addEventListener("click",e=>{e.preventDefault();if(typeof window.NJGD_DOWNLOAD_PDF==="function")window.NJGD_DOWNLOAD_PDF(p,s,pdf);else alert("The PDF library could not load.")});
 }
 function initContact(){const f=$("contact-form");if(!f)return;
