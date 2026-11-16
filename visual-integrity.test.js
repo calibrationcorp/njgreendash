@@ -60,3 +60,26 @@ for(const page of pageFiles){
  assert(html.includes('href="news.html"'),page+": missing Industry News navigation");
 }
 console.log("Passed: news links on every HTML page, valid news snapshots, scheduled refresh, and live/static fallback.");
+
+const crypto=require("node:crypto");
+const visualUsage=new Map();
+let verifiedVisuals=0;
+for(const project of projects){
+ for(const role of ["exterior","interior","board"]){
+  const image=project[role];
+  assert(image,"Project "+project.id+" missing "+role);
+  assert(/\\.(?:jpe?g|png|webp)$/i.test(image),"Project "+project.id+" "+role+" must be a rendered image, not an SVG");
+  const file=path.resolve(root,image);
+  assert(file.startsWith(root+path.sep),"Project image escapes root: "+image);
+  const bytes=fs.readFileSync(file);
+  assert(bytes.length>10000,"Project "+project.id+" "+role+" suspiciously small: "+image);
+  const hash=crypto.createHash("sha256").update(bytes).digest("hex");
+  const prior=visualUsage.get(hash);
+  assert(!prior || prior.project===project.id,
+    "Same image content reused across projects "+prior?.project+" and "+project.id+" ("+image+")");
+  visualUsage.set(hash,{project:project.id,role,image});
+  verifiedVisuals++;
+ }
+}
+console.log("Checked "+verifiedVisuals+" photo/presentation references for cross-project exact duplicates.");
+
