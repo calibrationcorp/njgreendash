@@ -1,6 +1,6 @@
 (()=>{"use strict";
 const $=id=>document.getElementById(id),P=window.NJGD_PROJECTS||[],C=window.NJGD_CASES||[];
-function initNav(){const t=$("mobile-toggle"),n=$("navlinks");if(t&&n)t.addEventListener("click",()=>{const open=n.classList.toggle("open");t.setAttribute("aria-expanded",String(open))});}
+function initNav(){const t=$("mobile-toggle"),n=$("navlinks");if(n&&!n.querySelector('a[data-board-directory]')){const a=document.createElement("a");a.href="portfolio.html";a.textContent="Design Boards";a.dataset.boardDirectory="true";n.appendChild(a);}if(t&&n)t.addEventListener("click",()=>{const open=n.classList.toggle("open");t.setAttribute("aria-expanded",String(open))});}
 function initPortfolio(){const el=$("all-projects"),input=$("portfolio-search"),count=$("project-count"),filters=$("project-filters");if(!el)return;let active="All";
 const cards=new Map(Array.from(el.querySelectorAll("[data-project]"),card=>[Number(card.dataset.project),card]));
 const show=()=>{
