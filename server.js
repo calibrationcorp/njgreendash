@@ -55,8 +55,20 @@ http.createServer(async(req,res)=>{
     res.setHeader('Cache-Control','public, max-age=300');
     res.setHeader('X-Content-Type-Options','nosniff');
     if(!Object.hasOwn(categories,category)){res.writeHead(400);return res.end(JSON.stringify({error:'Unknown category'}));}
-    try {return res.end(JSON.stringify(await getNews(category)));}
-    catch(err){res.writeHead(503);return res.end(JSON.stringify({error:'News temporarily unavailable. Try again later.'}));}
+    try {
+      const live=await getNews(category);
+      if(live.articles.length)return res.end(JSON.stringify(live));
+      throw new Error('Empty live feed');
+    }catch(err){
+      try {
+        const snapshot=JSON.parse(fs.readFileSync(path.join(root,'news-cache.json'),'utf8'));
+        const saved=snapshot.topics?.[category];
+        if(saved && Array.isArray(saved.articles) && saved.articles.length)
+          return res.end(JSON.stringify({category,updatedAt:saved.updatedAt,articles:saved.articles,stale:true,source:'saved'}));
+      }catch(ignore){}
+      res.writeHead(503);
+      return res.end(JSON.stringify({error:'News temporarily unavailable; use the publisher search links on the news page.'}));
+    }
   }
   const file=path.resolve(root,'.'+(pathname==='/'?'/index.html':pathname));
   if(!file.startsWith(root+path.sep)){res.writeHead(403);return res.end('Forbidden');}
