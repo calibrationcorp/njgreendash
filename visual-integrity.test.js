@@ -39,6 +39,10 @@ console.log("Passed: " + pageFiles.length + " HTML pages, " + images + " image t
   technicalLinks + " technical links, " + projectAssets + " project image references. No inline SVG portfolio images or missing local assets.");
 
 
+const homePage=fs.readFileSync(path.join(root,"index.html"),"utf8");
+assert(homePage.includes('id="njgd-headline-links"'),"Homepage must expose the latest-industry-news ribbon");
+assert(homePage.includes('news-ribbon.js'),"Homepage must load its headline-link script");
+assert(fs.existsSync(path.join(root,"news-ribbon.js")),"Homepage news ribbon script missing");
 const newsPage=fs.readFileSync(path.join(root,"news.html"),"utf8");
 const newsScript=fs.readFileSync(path.join(root,"news.js"),"utf8");
 const newsCache=JSON.parse(fs.readFileSync(path.join(root,"news-cache.json"),"utf8"));
@@ -68,7 +72,7 @@ for(const project of projects){
  for(const role of ["exterior","interior","board"]){
   const image=project[role];
   assert(image,"Project "+project.id+" missing "+role);
-  assert(/\\.(?:jpe?g|png|webp)$/i.test(image),"Project "+project.id+" "+role+" must be a rendered image, not an SVG");
+  assert(/\.(?:jpe?g|png|webp)$/i.test(image),"Project "+project.id+" "+role+" must be a rendered image, not an SVG");
   const file=path.resolve(root,image);
   assert(file.startsWith(root+path.sep),"Project image escapes root: "+image);
   const bytes=fs.readFileSync(file);

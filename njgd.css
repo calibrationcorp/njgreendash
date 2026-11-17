@@ -64,3 +64,12 @@
 .njgd-design-board-grid img{display:block;width:100%;height:clamp(220px,27vw,410px);object-fit:cover;background:#eef2ed}
 .njgd-design-board-grid figcaption{padding:12px 18px;font-size:.88rem;letter-spacing:.055em;font-weight:750;color:#164631;text-transform:uppercase}
 @media(max-width:700px){.njgd-design-board-grid{grid-template-columns:1fr}.njgd-design-board-grid img{height:auto;aspect-ratio:4/3;object-fit:contain}}
+
+/* Homepage industry headline ribbon */
+.njgd-headline-ribbon{background:#edf5e8;border-bottom:1px solid #d6e5d1;color:#153e27}
+.njgd-headline-ribbon .container{display:flex;align-items:center;gap:18px;min-height:42px;padding:7px 0}
+.njgd-headline-ribbon strong{flex:0 0 auto;color:#276b35;font-size:10px;letter-spacing:.13em;font-weight:950}
+.njgd-headline-links{display:flex;align-items:center;gap:18px;min-width:0;overflow-x:auto;scrollbar-width:thin}
+.njgd-headline-links a{flex:0 0 auto;max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#174b2d;font-size:11px;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.njgd-headline-links a:hover{color:#438b29}
+@media(max-width:650px){.njgd-headline-ribbon .container{align-items:flex-start;flex-direction:column;gap:5px;padding:8px 0}.njgd-headline-links{width:100%;gap:14px}.njgd-headline-links a{max-width:260px}}

@@ -19,6 +19,7 @@ jobs:
         run: |
           node --check server.js
           node --check news.js
+          node --check news-ribbon.js
           node --check news-feed-fetch.js
           node --check visual-integrity.test.js
       - name: Test portfolio assets and news navigation
