@@ -5,6 +5,7 @@ const status=document.getElementById('news-status');
 const refreshButton=document.getElementById('news-refresh');
 let active='cannabis';
 let sequence=0;
+let lastLoadedAt=null;
 
 const searches={
  cannabis:'https://news.google.com/search?q=cannabis%20marijuana%20regulation&hl=en-US&gl=US&ceid=US%3Aen',
@@ -41,7 +42,10 @@ function showArticles(data,topic,source){
  }
  if(!shown)addSourceLink(topic);
  const date=data?.updatedAt?safeDate(data.updatedAt):'Not yet refreshed';
- status.textContent=(shown?shown+' headlines · ':'')+(source==='live'?'Live news':'Latest saved headlines')+' · Last updated '+date;
+ const age=data?.updatedAt?Date.now()-Date.parse(data.updatedAt):NaN;
+ const stale=Number.isFinite(age)&&age>48*60*60*1000;
+ status.textContent=(shown?shown+' headlines · ':'')+(source==='live'?'Live news':'Saved news')+' · Last updated '+date+(stale?' · Feed update overdue':'');
+ lastLoadedAt=data?.updatedAt||null;
  return shown;
 }
 async function fetchJSON(url,timeoutMs){
@@ -63,13 +67,16 @@ async function load(topic){
  addSourceLink(topic);
  let savedCount=0;
  try {
-  const snapshot=await fetchJSON('news-cache.json?v=20261116b',4500);
+  const snapshot=await fetchJSON(new URL('news-cache.json',document.baseURI).href+'?t='+Date.now(),6500);
   if(serial!==sequence)return;
   const saved=snapshot?.topics?.[topic];
   if(saved)savedCount=showArticles(saved,topic,'saved');
  }catch(error){if(serial!==sequence)return;status.textContent='Saved news temporarily unavailable; live news still loading…'}
+ // The scheduled static cache is the primary source. The optional API is only
+ // needed if the cache is absent: static deployments often have no /api/news.
+ if(savedCount)return;
  try {
-  const live=await fetchJSON('/api/news?category='+encodeURIComponent(topic),5500);
+  const live=await fetchJSON('/api/news?category='+encodeURIComponent(topic),3500);
   if(serial!==sequence)return;
   if(Array.isArray(live?.articles)&&live.articles.length)showArticles(live,topic,'live');
   else if(!savedCount)status.textContent='Headlines not available here — use the source link below.';
