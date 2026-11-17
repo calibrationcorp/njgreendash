@@ -68,7 +68,7 @@ for(const project of projects){
  for(const role of ["exterior","interior","board"]){
   const image=project[role];
   assert(image,"Project "+project.id+" missing "+role);
-  assert(/\\.(?:jpe?g|png|webp)$/i.test(image),"Project "+project.id+" "+role+" must be a rendered image, not an SVG");
+  assert(/\.(?:jpe?g|png|webp)$/i.test(image),"Project "+project.id+" "+role+" must be a rendered image, not an SVG");
   const file=path.resolve(root,image);
   assert(file.startsWith(root+path.sep),"Project image escapes root: "+image);
   const bytes=fs.readFileSync(file);
