@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-18T20:30:32.456Z",
+  "updatedAt": "2026-11-19T02:34:20.845Z",
   "topics": {
     "cannabis": {
-      "updatedAt": "2026-11-18T20:30:32.456Z",
+      "updatedAt": "2026-11-19T02:34:20.845Z",
       "articles": [
         {
           "title": "Texas sees political momentum for legalizing weed, but significant hurdles remain - WFAA",
@@ -151,19 +151,31 @@
       ]
     },
     "psychedelics": {
-      "updatedAt": "2026-11-18T20:30:32.456Z",
+      "updatedAt": "2026-11-19T02:34:20.845Z",
       "articles": [
         {
-          "title": "Congress To Hold Hearing Focused On Psychedelic Therapy For Military Veterans This Week - Marijuana Moment",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPRFl4M09TUnpTRk9jMXBmVnA4WldEME0zdnVxWG1NZTJhbE5YZ0RDNGRwcDRmQ2lTM3hoMjlEYW5xSVhWd0JMVFRSRGt5UW1BRmFvZ2I4eTFWdDZPV2xURWlVcG04ZGtvVHQ0R2NVWFJTMFV2aWxYbVFXaGFpeGlZaEdKRVpqYm5uR1FXRXdJVXJIU05lWmUzek5OTkRaMGZlZzdJQjF2Z2g2MzZGYkNjWVBlN2k2NDFiVzZGbg?oc=5",
+          "title": "Veterans groups urge VA, Congress to prepare for FDA-approved psychedelics for mental health treatment - Stars and Stripes",
+          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPeXhzWlkycFNvT2c5X20ybFpaNGQxbDR3UGRYNG5GNFFhdHpCdlA0Vk1BNmgzWTIwcXkwTGxuZFBTeWdiYUR4Um1TTXpIeWZUOG9lblEzOGR5Y3h5WEt4RDhaVThQdmJEWVhtRlFhZktFcHpzbUotMENfZzZUMld2SVIyV0JwbHdyaTZPeTVJZ1g2NHItVTRxRHpTaUI0Zw?oc=5",
+          "source": "Stars and Stripes",
+          "published": "Wed, 18 Nov 2026 23:33:04 GMT"
+        },
+        {
+          "title": "Congress Holds Hearing On Psychedelics’ Medical Benefits For Military Veterans - Marijuana Moment",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOUnp6cHNrdS1oR1M3aE9oNkxZUFJCOTVYdmJYUGRrVVFVYXlHQzNqOFdtaGI4NThLaDlhQXloZC1acjk5eEJ1dXhSRE83QXdhRUlfZWI5ZEVEWHNrZkVpV2xLNGFjdF9aSnp6SkVvUTZqVW9XWkVkd01lUVZkSThUd2h2TjMyR0lDTlREckNodmpNQXlsNENNMWItZF83ajVQSlNzWkNDUmZweG9wcnNj?oc=5",
           "source": "Marijuana Moment",
-          "published": "Tue, 17 Nov 2026 15:38:24 GMT"
+          "published": "Wed, 18 Nov 2026 21:16:41 GMT"
         },
         {
           "title": "Trump signs executive order accelerating research into psychedelic drug therapies - ABC News - Breaking News, Latest News and Videos",
           "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQR1BvY29qdzU3bm1lUEVOWUJHenU5OEpCdkxUajRMdmoxSlpORE9PRTBudnVUd0lkNF9wVzRkUldfbGFDUkNzWXJnb3VpRGp3N0hpaUotTUhBRjFoVnRtWlMtdnNwUjIzSUJnRjNQLXU1YXMyMWxucHNUVWJuWnJvNXVqZmFobEh0aWxmSGFSLXpVel9Wb0ZUVmlrX1FXaXNyRU90ZEw5RUNyV1JOU1JxWE5B?oc=5",
           "source": "ABC News - Breaking News, Latest News and Videos",
-          "published": "Tue, 17 Nov 2026 01:43:13 GMT"
+          "published": "Tue, 17 Nov 2026 22:41:11 GMT"
+        },
+        {
+          "title": "Congress To Hold Hearing Focused On Psychedelic Therapy For Military Veterans This Week - Marijuana Moment",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPRFl4M09TUnpTRk9jMXBmVnA4WldEME0zdnVxWG1NZTJhbE5YZ0RDNGRwcDRmQ2lTM3hoMjlEYW5xSVhWd0JMVFRSRGt5UW1BRmFvZ2I4eTFWdDZPV2xURWlVcG04ZGtvVHQ0R2NVWFJTMFV2aWxYbVFXaGFpeGlZaEdKRVpqYm5uR1FXRXdJVXJIU05lWmUzek5OTkRaMGZlZzdJQjF2Z2g2MzZGYkNjWVBlN2k2NDFiVzZGbg?oc=5",
+          "source": "Marijuana Moment",
+          "published": "Tue, 17 Nov 2026 15:38:24 GMT"
         },
         {
           "title": "How hospital leaders view psychedelics - Healthcare Brew",
