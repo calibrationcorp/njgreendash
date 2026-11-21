@@ -1,9 +1,15 @@
 {
-  "updatedAt": "2026-11-20T20:18:02.728Z",
+  "updatedAt": "2026-11-21T02:13:36.535Z",
   "topics": {
     "cannabis": {
-      "updatedAt": "2026-11-20T20:18:02.728Z",
+      "updatedAt": "2026-11-21T02:13:36.535Z",
       "articles": [
+        {
+          "title": "Federal ban looms for NC hemp products industry, but high hopes remain for change - Carolina Public Press",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOaUVNdGtzNlVQMjh3aVpHTHZscjBIRll5SU5IenhPMVJMb0I3VW9WYTdLTVpJaGpycTQ5eUpWMUoxTVh1QWJib09DTjNhN1VoY0RvUUd5Q3lQY3AxcmpPTFk0aEMwWTJZOWxoNUcyN2RpVnIzclRGYk9JbDBQekdJMmNuNGhtdVoyR0RkQ1l0UEZUVHllekt6QS1wSEdKc2VyUkRKdjEwdWRQbjRHX3FyQmhiUloxbWV1LXFZ?oc=5",
+          "source": "Carolina Public Press",
+          "published": "Fri, 20 Nov 2026 15:16:33 GMT"
+        },
         {
           "title": "Denton THC cocktail maker Wild Revival prepares to close doors ahead of federal, state regulations - Denton Record-Chronicle",
           "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOc3d1OTY2cWxfdU5ES3pyanFNbDIyM256dTVNbUtJZU1TcXFpMnJsdk16eG5YNjlCaXp2amZteU1Fa1I2THhjVll1cnB3amZOVktKaXp4T1hyYjlocG1yYzJVcGRneXZYZHRXbGVBeFBZakYwVTZWdEQ2ZzRpNGRQc2NEd3lEaERLZi1hNzZZcFRDbDNuOGZTVGRLc3NJYnhGOUtrdjFsaUxDZXlyWWxmdVlTX09ZTkFSTzhlT2xOaVVkTXBMR3phRk1ZVjFfSkV0U2p1anViRE5VVTRHOTh1VGh1bUNuMVo1Z2ZDQk54VmVJWGU5ZW9NZXlRd0xubUI0RURWRWNkUkg?oc=5",
@@ -83,12 +89,6 @@
           "published": "Tue, 17 Nov 2026 09:50:31 GMT"
         },
         {
-          "title": "What does a federal hemp ban mean for a Texas industry high on hope after midterm elections? - WFAA",
-          "link": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNLXRSTDc5bWt5RGhLTE1ocUZ2ZDF2cy1DX3VLRFFsX3p5amxWNW1WTk00a0hrWjVqTjZZUF8xWHF0WGRpNFE4eDZRd3NrbmhLZUVIUXdXWUpyd1JBUjYzSTV6UTVHU21UbGkwd0cxd0thYTB0UHBFVGFrcml3MkpXU1VFM0xCaHJSM1pNdnlkODE1eDc1Tk5Scms0SFhQemMzTjRCY0VRY3V1OEtsVGJUZEZCNzBsc3Zjd25oLVJpSUZtaklSRkRKdWxKNHJMSzVHQzMyNzlWQTVzTDE2cTJLR05RLUxldUx4bUFoVEcwSUlIRVJIWVkwMTU2UUdOZw?oc=5",
-          "source": "WFAA",
-          "published": "Tue, 17 Nov 2026 01:44:09 GMT"
-        },
-        {
           "title": "Marijuana Policy Project Welcomes Heather Azzi as New Policy Director and General Counsel - Cannabis Business Times",
           "link": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxQZWtCQ3hJd1J3akZoNzZXT1o3MDZwTEZMU21hRlluVGNac3k1TWdQYllVOTNlbUUxX0h4bDk3S1VRdTljSmVwLU5QM3JlaW15WGE5a0FRU0hzQlU3N2pMMmtraDVqVnVjcXhTQTAxX214cG85M0hScktPeTE5akxpa0ppSktVb3ZYdzM3d0lNenNtS3I0SGQ5NmRfUjI3MmhteWhCSzFmQnRIT1RpSVNhNkRsRjl3cDlvOVRPRTlURWNsejF0RzVlZHQ5aUdMdUdHUkNMTjkwZW9TWk1IM2thMkY2TWt3OXpvYW9lUUx0aDVwR2RIanNWNXNLWjM5NkFpWUR3bkhEa3BiUWZpYmdnSWE1YUVvX2NfbnpGV3dHT3VDbXJTVXY3TEtrTQ?oc=5",
           "source": "Cannabis Business Times",
@@ -115,8 +115,14 @@
       ]
     },
     "psychedelics": {
-      "updatedAt": "2026-11-20T20:18:02.728Z",
+      "updatedAt": "2026-11-21T02:13:36.535Z",
       "articles": [
+        {
+          "title": "For some patients, psychedelic treatment brings new troubles in its aftermath - NPR",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNODFycmQxZDZNWlZDQ3hRdUEyTG13M1l3bGJETU81dlJrd0ozUFdDcjFyc2gwaWZfQkpHYS1EQWlkMzJGVGxKbjJxREQ0VEhoSUktMkVCeUZYbVFUS3k1cXZiakNILTFsZ2hHSWlPbFZGTXpoLXZvMDlyTVRVRzV1WmJxTUI2c2R6a0htalUxdi1qZ0dESmtxbWpWQUhCbnd6QkdBNW5uQlE2VkFZTkRGbXp1Z3BZcGVpaDVVTkhn?oc=5",
+          "source": "NPR",
+          "published": "Thu, 19 Nov 2026 23:07:17 GMT"
+        },
         {
           "title": "Veterans groups urge VA, Congress to prepare for FDA-approved psychedelics for mental health treatment - Stars and Stripes",
           "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPeXhzWlkycFNvT2c5X20ybFpaNGQxbDR3UGRYNG5GNFFhdHpCdlA0Vk1BNmgzWTIwcXkwTGxuZFBTeWdiYUR4Um1TTXpIeWZUOG9lblEzOGR5Y3h5WEt4RDhaVThQdmJEWVhtRlFhZktFcHpzbUotMENfZzZUMld2SVIyV0JwbHdyaTZPeTVJZ1g2NHItVTRxRHpTaUI0Zw?oc=5",
